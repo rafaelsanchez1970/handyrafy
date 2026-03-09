@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Rafy LLC | Marietta Handyman</title>
+    
+    <style>
+
+        /* Contenedor principal del carrusel */
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        /* El "riel" que mueve las imágenes */
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* CADA DIAPOSITIVA - Mostrando 2 a la vez */
+        .slider-slide {
+            min-width: 50%; /* Esto hace que quepan dos */
+            box-sizing: border-box;
+            padding: 5px;
+            position: relative;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+
+
+        :root {
+            --dark-blue: #1e3a8a;
+            --light-blue: #ebf3f9;
+            --yellow: #ffc107;
+            --green: #22c55e;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* Header */
+   
+   
+   
+        header {
+   
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+        .logo { font-weight: 800; font-size: 22px; color: #374151; }
+        nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin-left: 20px; font-size: 14px; }
+        .btn-contact { background: var(--dark-blue); color: white; padding: 8px 18px; border-radius: 4px; }
+
+        /* Hero Section */
+        .hero { display: flex; background: var(--light-blue); min-height: 400px; }
+        .hero-img { width: 35%; object-fit: cover; }
+        .hero-content { width: 65%; padding: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero-content h1 { font-size: 48px; color: var(--dark-blue); margin: 10px 0; font-weight: 900; line-height: 1.1; }
+.cta-box { 
+    background: var(--yellow); 
+    padding: 20px; /* Mucho mejor para celulares */
+    width: 90%;    /* Para que no toque los bordes */
+    max-width: 400px; /* Para que no sea gigante en PC */
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    margin-top: 20px; 
+}
+       
+       
+        .cta-box .phone { font-size: 24px; font-weight: 700; color: var(--dark-blue); margin-top: 5px; }
+
+
+
+        /* Services Grid */
+        section { padding: 60px 10%; }
+        h1 { text-align: center; font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid #3b82f6; }
+        .card h3 { margin-top: 0; color: var(--dark-blue); }
+
+
+
+        /* --- LOCAL CHECKMARK LOGIC --- */
+        .card ul, .why-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .card li, .why-list li {
+            background-image: url('img/checkmark.png'); /* Path to your local icon */
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 18px;
+            padding-left: 30px; /* Space for the icon */
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            min-height: 24px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose { background-color: #f3f4f6; }
+        .why-container { display: flex; gap: 50px; align-items: center; max-width: 1000px; margin: 0 auto; }
+        
+        /* Gallery aqui */
+        .ba-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .ba-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+        .ba-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
+        .ba-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; font-size: 10px; text-align: center; padding: 3px 0; font-weight: bold; text-transform: uppercase; }
+        .ba-label.after { background: var(--dark-blue); }
+
+
+        /* Floating Button */
+        .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; }
+
+       @media (max-width: 768px) {
+    /* 1. Forzamos el centrado total del Hero */
+    .hero { 
+        flex-direction: column !important; /* Imagen arriba, contenido abajo */
+        align-items: center !important;    /* Centra horizontalmente todo el bloque */
+        text-align: center !important;     /* Centra el texto */
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .hero-img { 
+        width: 100% !important; 
+        height: auto !important; 
+        max-height: 250px; /* Para que la foto no sea gigante */
+        object-fit: cover;
+    }
+
+    .hero-content { 
+        width: 100% !important; 
+        padding: 30px 20px !important; /* Espacio para que no toque los bordes del cel */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;    /* Centra el H1 y el CTA-BOX */
+    }
+
+    .hero-content h1 {
+        font-size: 28px !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    /* 2. Centramos el Rectángulo Amarillo */
+    .cta-box { 
+        margin: 20px auto !important;      /* El 'auto' lo centra horizontalmente */
+        width: 90% !important;             /* Casi todo el ancho */
+        max-width: 320px !important;       /* Pero no más de 320px */
+        padding: 15px !important;          /* Espacio interno normal */
+        display: block !important;
+    }
+}
+
+
+
+
+</style>
+</head>
+
+
+<body>
+index1.html
+
+<header>
+    <div style="font-weight: 800; font-size: 1.4rem; color: var(--dark); display: flex; align-items: center; gap: 10px;">
+      <!-- Tu imagen/logo aquí -->
+      <img src="img/logo.jpeg" alt="Logo" style="height: 40px; width: auto; border-radius: 4px;">
+      
+      <div>
+        <span style="color: var(--primary);">Handy</span> Rafy 
+        <span style="font-size: 0.8rem; color: #888;">LLC</span>
+      </div>
+    </div>
+
+
+
+
+
+  <!--   `     <div class="logo">Handy Rafy LLC</div>   -->
+<nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <!-- Use ONLY this one for the popup -->
+    <a href="javascript:void(0)" onclick="openWho()" style="color: var(--green); font-weight: 700;">Who We Are</a>
+      
+</nav>
+
+
+
+        </nav>
+    </header>
+
+
+
+    <section class="hero" style="padding:0;">
+        <!-- Local Hero Image -->
+        <img src="img/home-banner.png" class="hero-img" alt="Professional Handyman Marietta">
+        <div class="hero-content">
+            <p style="font-weight: 600; color: #666;">⭐ 5-Star Local Service • Fully Insured</p>
+            <h1>Handyman Services <br> in Marietta, GA</h1>
+            
+            
+            
+<!--        
+            <div class="cta-box">
+                <p style="text-transform: uppercase; font-size: 14px; font-weight: 600;">Text a photo of your project for a Free Quote</p>
+            </div>
+          
+
+<a href="sms:+16786987649?body=Hi! I am interested in your handyman services." class="floating-btn"S>
+    Send SMS
+</a>
+ --> 
+<a href="sms:+16786987649?body=Hi! I am interested in your handyman services." class="cta-box" style="text-decoration: none; display: block;">
+    <div style="font-weight: bold; text-transform: uppercase; font-size: 14px; color: var(--dark-blue);">Text a photo of your project for a Free Quote</div>
+   
+</a>
+
+
+
+            
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <h1>Projects Cap up to $2,500 (Labor + Materials)</h1>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Drywall & Painting</h3>
+                <ul>
+                    <li>Drywall Repair & Patching</li>
+                    <li>Interior Painting</li>
+                    <li>Popcorn Ceiling Removal</li>
+                    <li>Trim & Baseboard Paint</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Installations</h3>
+                <ul>
+                    <li>TV Wall Mounting</li>
+                    <li>Ceiling Fan Install</li>
+                    <li>Light Fixtures</li>
+                    <li>Smart Door Locks</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>General Repairs</h3>
+                <ul>
+                    <li>Door Adjustment</li>
+                    <li>Window Caulking</li>
+                    <li>Deck Maintenance</li>
+                    <li>Gutter Cleaning</li>
+                </ul>
+            </div>
+        </div>
+
+
+<!-- Insert this between Services and Why Choose Us -->
+<div style="background-color: #ffffff; padding: 40px 10%; text-align: center; border-bottom: 1px solid #f0f0f0;">
+    <h2 style="font-size: 24px; color: var(--dark-blue); margin-bottom: 10px;">
+        Not sure if we’re the right fit? Just ask Rafy!
+    </h2>
+    <p style="color: var(--text-gray); font-size: 18px; margin-bottom: 20px;">
+        Text a photo and description of your project to Rafy and he'll let you know! 
+        
+    </p>
+</div>
+
+
+    </section>
+
+    <section class="why-choose" id="gallery">
+        <h2>Why Choose Us?</h2>
+        <div class="why-container">
+            <ul class="why-list">
+                <li>Reliability & Communication</li>
+                <li>Trust & Safety</li>
+                <li>Transparency in Pricing</li>
+                <li>Quality Work</li>
+                <li>Fair Pricing</li>
+                <li>Cleanliness</li>
+                <li>We leave your home cleaner than we found it</li>
+            </ul>
+
+            <div class="ba-gallery">
+                <div class="ba-item">
+                    <img src="img/logo.jpeg">
+                </div>
+                <div class="ba-item">
+                    <img src="img/van2.png" alt="After Project">
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+<a href="sms:+16786987649?body=Hi! I am interested in your handyman services." class="floating-btn"S>
+    Send SMS
+</a>
+
+
+
+
+
+
+<section id="gallery" style="background:#f3f4f6;">
+        <h2>Recent Projects</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <!-- Slide 1 -->
+                <div class="slider-slide">
+                    <img src="img/Project1.jpg" alt="Work 1">
+                    <div class="ba-label">DRYWALL REPAIR</div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slider-slide">
+                    <img src="img/Project2.jpg" alt="Work 2">
+                    <div class="ba-label">INTERIOR PAINTING</div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slider-slide">
+                    <img src="img/Project3.jpg" alt="Work 3">
+                    <div class="ba-label">DECK REPAIR</div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slider-slide">
+                    <img src="img/Project4.jpg" alt="Work 4">
+                    <div class="ba-label">Project4</div>
+                </div>
+            
+
+            
+                         <!-- Slide 5 -->
+                <div class="slider-slide">
+                    <img src="img/5.jpg" alt="Work 5">
+                    <div class="ba-label">DRYWALL REPAIR</div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="slider-slide">
+                    <img src="img/Project6.jpg" alt="Work 6">
+                    <div class="ba-label">INTERIOR PAINTING</div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="slider-slide">
+                    <img src="img/Project7.jpg" alt="Work 7">
+                    <div class="ba-label">DECK REPAIR</div>
+                </div>
+                <!-- Slide 8 -->
+                <div class="slider-slide">
+                    <img src="img/Project8.jpg" alt="Work 8">
+                    <div class="ba-label">TV.. MOUNTING</div>
+                </div>
+
+            
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+            const wrapper = document.getElementById('sliderWrapper');
+            const slides = document.querySelectorAll('.slider-slide');
+            const totalSlides = slides.length;
+            
+            // Como mostramos 2 imágenes, el máximo índice es total - 2
+            const maxIndex = totalSlides - 2;
+
+            currentSlide += direction;
+
+            // Evitar que se salga de los límites
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide > maxIndex) {
+                currentSlide = maxIndex;
+            }
+
+            // Cada movimiento es del 50% porque cada slide ocupa la mitad
+            const offset = -(currentSlide * 50);
+            wrapper.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal Background Overlay -->
+<div id="whoWeAreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1001; justify-content:center; align-items:center;">
+    <!-- The Pop-up Window -->
+    <div style="background:white; padding:40px; border-radius:12px; max-width:600px; width:90%; position:relative; max-height:80vh; overflow-y:auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <button onclick="closeWho()" style="position:absolute; top:15px; right:15px; border:none; background:none; font-size:24px; cursor:pointer;">&times;</button>
+        
+        <h2 style="text-align:center; color:var(--dark-blue); margin-top:0;">Who We Are</h2>
+        <p style="margin-bottom:20px;">
+            Welcome to <strong>Handy Rafy LLC</strong>, your reliable partner for home maintenance and repairs in Marietta and the surrounding areas. We pride ourselves on providing high-quality, professional handyman services for those smaller projects that keep your home running smoothly.
+        </p>
+        <div style="background:#f9f9f9; padding:20px; border-radius:8px; border-left:5px solid var(--yellow);">
+            <p style="font-size: 0.95rem; color: #555; margin:0;">
+                <strong>Disclaimer & Licensing Information:</strong> In compliance with Georgia State Regulations, please be advised that Handy Rafy LLC is a professional handyman service provider and is not a state-licensed residential or general contractor.
+                <br><br>
+                We specialize in repair, maintenance, and improvement projects where the total value of labor and materials is under $2,500. We do not perform work involving structural changes, major electrical/plumbing systems, or HVAC services that require a specialized state license.
+            </p>
+        </div>
+        <button onclick="closeWho()" style="display:block; margin:20px auto 0; padding:10px 25px; background:var(--dark-blue); color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+    <!-- Al final de tu body -->
+    <script>
+        // Función para abrir la ventana
+        function openWho() {
+            document.getElementById('whoWeAreModal').style.display = 'flex';
+        }
+
+        // Función para cerrar la ventana
+        function closeWho() {
+            document.getElementById('whoWeAreModal').style.display = 'none';
+        }
+
+        // Cerrar si hacen clic fuera de la caja blanca
+        window.onclick = function(event) {
+            let modal = document.getElementById('whoWeAreModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+<!-- Modal Window -->
+<div id="whoWeAreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; padding:20px;">
+    <div style="background:white; padding:30px; border-radius:15px; max-width:600px; width:100%; position:relative; box-shadow: 0 20px 40px rgba(0,0,0,0.4); max-height:90vh; overflow-y:auto;">
+        <!-- Close Button -->
+        <button onclick="closeWho()" style="position:absolute; top:15px; right:15px; border:none; background:none; font-size:28px; cursor:pointer; color:#888;">&times;</button>
+        
+        <h2 style="color:var(--dark-blue); text-align:center; margin-top:0;">Who We Are</h2>
+        
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+            Welcome to <strong>Handy Rafy LLC</strong>, your reliable partner for home maintenance and repairs in Marietta and the surrounding areas. We pride ourselves on providing high-quality, professional handyman services for those smaller projects that keep your home running smoothly.
+        </p>
+
+        <div style="background:#f3f4f6; padding:20px; border-radius:10px; border-left:5px solid var(--yellow); margin-top:20px;">
+            <p style="font-size: 0.95rem; color: #444; margin:0;">
+                <strong>Disclaimer & Licensing Information:</strong> In compliance with Georgia State Regulations, Handy Rafy LLC is a professional handyman service provider and is not a state-licensed residential or general contractor.
+                <br><br>
+                We specialize in projects under $2,500. We do not perform structural changes, major electrical/plumbing systems, or HVAC services that require a specialized state license.
+            </p>
+        </div>
+
+        <button onclick="closeWho()" style="display:block; margin:25px auto 0; padding:12px 30px; background:var(--dark-blue); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">Got it!</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<footer style="background: #1f2937; color: white; padding: 60px 5% 20px; font-family: sans-serif;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Column 1: Logo & Bio -->
+        <div>
+            <h3 style="color: #ffc107; font-size: 1.5rem; margin-bottom: 15px;">Handy Rafy <span style="font-weight: 300; font-size: 0.9rem; color: #ccc;">LLC</span></h3>
+            <p style="color: #9ca3af; line-height: 1.6;">
+                Your local expert for home maintenance and repairs in Marietta, GA. Quality craftsmanship and professional service on every project.
+            </p>
+            <div style="margin-top: 20px;">
+                <span style="background: #22c55e; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">✅ FULLY INSURED</span>
+            </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+            <h4 style="border-left: 4px solid #ffc107; padding-left: 10px; margin-bottom: 20px;">Our Services</h4>
+            <ul style="list-style: none; padding: 0; color: #9ca3af; line-height: 2;">
+                <li>• General Repairs</li>
+                <li>• Painting & Drywall</li>
+                <li>• Minor Electrical Jobs</li>
+                <li>• MinorPlumbing jobs</li>
+                <li>• Furniture Assembly</li>
+                <li>• "Not sure if we’re the right fit? Just ask Rafy</li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div>
+            <h4 style="border-left: 4px solid #ffc107; padding-left: 10px; margin-bottom: 20px;">Contact Us</h4>
+            <p style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                <span style="color: #ffc107;">📍</span> Marietta, GA and surrounding areas
+            </p>
+            <p style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                <span style="color: #ffc107;">📞</span> <a href="tel:(678) 698-7649" style="color: white; text-decoration: none; font-weight: bold;">(678) 698-7649</a>
+            </p>
+            <p style="display: flex; align-items: center; gap: 10px;">
+                <span style="color: #ffc107;">✉️</span> HandyRafyMarietta@gmail.com
+            </p>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div style="border-top: 1px solid #374151; margin-top: 50px; padding-top: 20px; text-align: center; color: #6b7280; font-size: 14px;">
+        <p>&copy; 2026 Handy Rafy LLC. All rights reserved. | Marietta Handyman Services.</p>
+    </div>
+</footer>
+
+
+
+
+</body>
+
+
+
+<script>
+    function openWho() {
+        document.getElementById('whoWeAreModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    }
+
+    function closeWho() {
+        document.getElementById('whoWeAreModal').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Close window if user clicks the dark background
+    window.onclick = function(event) {
+        let modal = document.getElementById('whoWeAreModal');
+        if (event.target == modal) {
+            closeWho();
+        }
+    }
+</script>
+
+
+</html>

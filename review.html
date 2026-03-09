@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reviews | Raphael’s Handyman</title>
+  <meta name="description" content="Customer reviews for Raphael’s Handyman in Marietta, GA." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span>Serving Marietta & nearby areas</span>
+      <div class="topbar__actions">
+        <a class="link" href="tel:+1-000-000-0000">Call: (000) 000-0000</a>
+        <a class="btn btn--small" id="quoteOpenBtn" href="#">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <div class="brand__mark" aria-hidden="true">R</div>
+        <div class="brand__text">
+          <div class="brand__name">Raphael’s Handyman</div>
+          <div class="brand__tag">Marietta, GA</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="service.html">Services</a>
+        <a href="about.html">Who We Are</a>
+        <a href="review.html">Reviews</a>
+        <a href="index.html#areas">Service Area</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menuBtn" aria-label="Open menu" id="menuBtn">Menu</button>
+    </div>
+    <div class="mobileNav" id="mobileNav">
+      <a href="service.html">Services</a>
+      <a href="about.html">Who We Are</a>
+      <a href="review.html">Reviews</a>
+      <a href="index.html#areas">Service Area</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="heroBanner">
+    <div class="heroBg"><div class="imgHolder imgHolder--heroBanner"><span>REVIEWS</span><small>Ratings / testimonials banner</small></div></div>
+    <div class="heroOverlay">
+      <div class="container">
+        <div class="copy">
+          <h1>What Customers Say</h1>
+          <p class="lead">Real feedback from Marietta homeowners about our reliability and workmanship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Modal -->
+  <div id="quoteModal" class="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button class="modalClose" id="quoteCloseBtn" aria-label="Close">✕</button>
+      <h3 id="quoteModalTitle">Get a Quote</h3>
+      <form class="formCard" id="quoteFormModal" onsubmit="return false;">
+        <label class="field"><span>Name</span><input name="name" type="text" placeholder="Full name" /></label>
+        <label class="field"><span>Phone</span><input name="phone" type="tel" inputmode="tel" placeholder="(###) ###-#### (optional)" /><small class="error"></small></label>
+        <label class="field"><span>Email</span><input name="email" type="email" placeholder="name@example.com" /><small class="error"></small></label>
+        <label class="field"><span>What do you need done?</span><textarea name="message" rows="5" placeholder="Briefly describe the project, location, and timing..."></textarea></label>
+        <div class="formActions">
+          <button class="btn" type="submit">Send Request</button>
+          <button class="btn btn--ghost" type="button" id="clearFormModal">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        <article class="card review"><p>“On time, explained everything, and the repair looks perfect.”</p><div class="review__meta">— Marietta homeowner</div></article>
+        <article class="card review"><p>“Fast install and clean work. Will definitely call again.”</p><div class="review__meta">— East Cobb resident</div></article>
+        <article class="card review"><p>“Great communication and fair price. Solid workmanship.”</p><div class="review__meta">— Repeat customer</div></article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="strong">Raphael’s Handyman • Marietta, GA</div>
+        <div class="muted small">© <span id="year"></span> All rights reserved.</div>
+      </div>
+      <div class="footer__links">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="service.html">Services</a>
+        <a class="link" href="about.html">Who We Are</a>
+        <a class="link" href="review.html">Reviews</a>
+        <a class="link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
