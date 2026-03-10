@@ -209,7 +209,7 @@
 
 
 <body>
-index1.html
+index.html
 
 <header>
     <div style="font-weight: 800; font-size: 1.4rem; color: var(--dark); display: flex; align-items: center; gap: 10px;">
@@ -217,7 +217,7 @@ index1.html
       <img src="img/logo.jpeg" alt="Logo" style="height: 40px; width: auto; border-radius: 4px;">
       
       <div>
-        <span style="color: var(--primary);">Handy</span> Rafy 
+        <span style="color: var(--dark-blue);">Handy</span> Rafy 
         <span style="font-size: 0.8rem; color: #888;">LLC</span>
       </div>
     </div>
@@ -258,12 +258,10 @@ index1.html
                     display: flex;         /* Alinea en horizontal */
                     flex-wrap: wrap;       /* Si no caben en el celular, bajan a la siguiente línea */
                     gap: 20px;             /* Espacio uniforme entre palabras */
-    list-style-type: disc;     /* Asegura que la viñeta sea un círculo sólido */
-    list-style-position: inside; /* ¡IMPORTANTE! Mete la viñeta dentro del área visible */
                     padding: 0;
                     font-weight: bold;     /* Pone las letras en negrita */
                     margin-top: 0; /* Controla qué tan cerca está del H1 */               
-               
+                    list-style: none;
                
                 }
 
@@ -272,13 +270,13 @@ index1.html
                         .lista-optimizada {
                         gap: 10px;           /* Reduce el espacio si la pantalla es pequeña */
                         justify-content: center; /* Centra los elementos en el móvil */
-                      }
+                     height: auto; /* Permite que la lista crezca en altura si es necesario */
+                       
+                    }
                 }
             </style>
             <ul class="lista-optimizada">
-                <li>Fast Repairs</li>
-                <li>Instalations</li>
-                <li>Home improvements</li>
+                <li>Do it Right the First Time</li>
             </ul>
  
         <a href="sms:+16786987649?body=Hi! I am interested in your handyman services." class="cta-box" style="text-decoration: none; display: block;">
@@ -296,45 +294,87 @@ index1.html
         <h2>Our Services</h2>
         <h1>Projects Cap up to $2,500 (Labor + Materials)</h1>
         <div class="grid-3">
+            
             <div class="card">
-                <h3>Drywall & Painting</h3>
+                <h3>Electrical Maintenance & Minor Repairs</h3>
                 <ul>
-                    <li>Drywall Repair & Patching</li>
-                    <li>Interior Painting</li>
-                    <li>Popcorn Ceiling Removal</li>
-                    <li>Trim & Baseboard Paint</li>
+                    <li> Fixture Installation: Replacing old ceiling lights, chandeliers, or wall sconces with new models</li>
+                    <li>Ceiling Fan Installation: Swapping out existing fans or installing new ones in pre-wired locations.</li>
+                    <li>Outlet & Switch Replacement: Upgrading old outlets to modern styles or replacing faulty light switches.</li>
+                    <li>GFCI Outlet Installation: Enhancing safety in kitchens and bathrooms by installing Ground Fault Circuit Interrupter outlets.</li>
+                    <li>Dimmer Switch Upgrades: Installing dimmer switches to help clients control ambiance and save energy.</li>
+                <li>Smoke & Carbon Monoxide Detectors: Replacing batteries or installing new battery-operated units.</li>
+            </ul>
+            </div>
+
+        <div class="card">
+                <h3>Low-Voltage & Smart Home Services</h3>
+                <ul>
+                    <li>Doorbell Installation: Setting up Ring, Nest, or other video doorbells. </li>
+                    <li>Security Camera Setup: Installing plug-in or battery-operated outdoor/indoor security cameras.</li>
+                    <li>Smart Home Integration: Setting up smart bulbs, plugs, and hubs.</li>
+                    <li>TV Wall Mounting: Mounting TVs and using cable management kits to hide wires.</li>
+                    <li>>Landscape Lighting: Installing low-voltage (transformer-based) garden and pathway lights.</li>
                 </ul>
             </div>
-            <div class="card">
-                <h3>Installations</h3>
+        
+        <div class="card">
+                <h3>Plumbing Services</h3>
                 <ul>
-                    <li>TV Wall Mounting</li>
-                    <li>Ceiling Fan Install</li>
-                    <li>Light Fixtures</li>
-                    <li>Smart Door Locks</li>
-                </ul>
+                    <li>Faucet Repair & Replacement: Installing new kitchen or bathroom faucets and fixing leaks.</li>
+                    <li>Toilet Repair & Installation: Replacing wax rings, flappers, fill valves, or installing a completely new toilet in an existing location.</li>
+                    <li>Showerhead & Trim Replacement: Swapping out old showerheads or tub spouts for new ones</li>
+                    <li>Clog Removal: Unclogging sinks, toilets, and tubs using standard mechanical tools.</li>
+                    <li>Garbage Disposal Installation: Replacing an old unit with a new one in the same spot.</li>
+                    <li>Sink Installation: Replacing a drop-in or undermount sink without moving the drain lines.</li>
+                    <li>Hose Bib Repair: Replacing external outdoor faucets.</li>
+                    <li>Leak Repair: Fixing minor leaks under sinks or in visible supply lines.</li>
+
+    </ul>
             </div>
+           
+
             <div class="card">
-                <h3>General Repairs</h3>
+                <h3>General Home Repairs & Maintenance</h3>
                 <ul>
-                    <li>Door Adjustment</li>
-                    <li>Window Caulking</li>
-                    <li>Deck Maintenance</li>
-                    <li>Gutter Cleaning</li>
-                </ul>
+                    <li>Drywall Repair & Patching: Expert repair of holes, cracks, and ceiling damage, including professional finishing and texture matching.</li>
+                    <li>Door & Window Services: Installation of new door locks, deadbolts, and hardware, as well as screen repairs and door adjustments.</li>
+                    <li>Mounting & Installation: Secure wall mounting for TVs, heavy mirrors, artwork, shelving, and curtain rods.</li>
+                    <li>Furniture Assembly: Fast and correct assembly of all home and office furniture (IKEA, Wayfair, etc.).</li>
+                    <li>Carpentry Finishes: Installation and repair of baseboards, crown molding, and interior trim work.</li>
+                    <li>Cabinetry Upgrades: Replacing cabinet hinges, handles, and knobs to refresh your kitchen or bathroom.</li>
+                    <li>Caulking & Grouting: Professional sealing of tubs, showers, and sinks to prevent water damage, and grout touch-ups for tile.</li>
+                    <li>Exterior Maintenance: Pressure washing of driveways and decks, gutter cleaning, and minor fence or gate repairs.</li>
+                    <li>Seasonal Tasks: Weatherproofing, insulation checks, and preparation for winter or summer conditions.</li>
+                    <li>Deck & Porch Care: Staining, sealing, and replacing damaged boards to extend the life of your outdoor spaces.
+
+
+                    </ul>
             </div>
         </div>
 
 
 <!-- Insert this between Services and Why Choose Us -->
 <div style="background-color: #ffffff; padding: 40px 10%; text-align: center; border-bottom: 1px solid #f0f0f0;">
+
+<h1><strong>Note:</strong> Handy Rafy LLC is a professional handyman service. We are not licensed plumbers or electricians. Our services are limited to minor repairs, maintenance, and "remove-and-replace" tasks. In compliance with Georgia law, we do not perform new installations or projects exceeding $2,500.</h1>
+
     <h2 style="font-size: 24px; color: var(--dark-blue); margin-bottom: 10px;">
         Not sure if we’re the right fit? Just ask Rafy!
     </h2>
+<a href="sms:+16786987649?body=Hi! I am interested in your handyman services." 
+   class="cta-box" 
+   style="text-decoration: none; display: block; max-width: 600px; margin: 0px auto; text-align: center;">
+    <div style="background-color: #ffcc00; padding: 0px; border-radius: 8px; font-weight: bold; text-transform: uppercase; font-size: 14px; color: darkblue; border: none solid #000;">
+        Text a photo and description of your project to Rafy and he'll let you know!
+    </div>
+</a>
+<!--
     <p style="color: var(--text-gray); font-size: 18px; margin-bottom: 20px;">
         Text a photo and description of your project to Rafy and he'll let you know! 
         
     </p>
+-->
 </div>
 
 
@@ -463,7 +503,44 @@ index1.html
             const offset = -(currentSlide * 50);
             wrapper.style.transform = `translateX(${offset}%)`;
         }
-    </script>
+
+
+
+
+
+
+
+
+const slider = document.getElementById('sliderWrapper');
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Registra dónde empieza el toque
+slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+// Registra dónde termina el toque y calcula la dirección
+slider.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Sensibilidad mínima en píxeles
+    
+    if (touchStartX - touchEndX > swipeThreshold) {
+        // Deslizó hacia la izquierda -> Siguiente imagen
+        moveSlide(1);
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Deslizó hacia la derecha -> Imagen anterior
+        moveSlide(-1);
+    }
+}
+
+
+
+</script>
 
 
 
@@ -609,7 +686,7 @@ index1.html
 </body>
 
 
-
+<!--
 <script>
     function openWho() {
         document.getElementById('whoWeAreModal').style.display = 'flex';
@@ -629,6 +706,6 @@ index1.html
         }
     }
 </script>
-
+-->
 
 </html>
