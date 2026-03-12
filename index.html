@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,35 +37,22 @@
 
 
 </head>
-<!--
- Ventana Emergente (Modal) 
-<div id="whoWeAreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
-    <div style="background:white; padding:30px; border-radius:8px; max-width:500px; position:relative;">
-        <span onclick="closeWho()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:24px;">&times;</span>
-        <h2>About Handy Rafy LLC</h2>
-        <p>Your local Marietta handyman. We specialize in high-quality home repairs and maintenance under $2,500.</p>
-    </div>
-</div>
--->
-
 <header>
     <div style="font-weight: 800; font-size: 1.4rem; color: var(--dark); display: flex; align-items: center; gap: 10px;">
       <!-- Tu imagen/logo aquí -->
       <img src="img/logo.jpeg" alt="Logo" style="height: 40px; width: auto; border-radius: 4px;">
-      
       <div>
         <span style="color: var(--dark-blue);">Handy</span> Rafy 
         <span style="font-size: 0.8rem; color: #888;">LLC</span>
       </div>
     </div>
-    <!--   `     <div class="logo">Handy Rafy LLC</div>   -->
+    <!-- <div class="logo">Handy Rafy LLC</div>   -->
     <nav>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
         <!-- Use ONLY this one for the popup -->
         <a href="javascript:void(0)" onclick="openWho()" style="color: var(--green); font-weight: 700;">Who We Are</a>
     </nav>
-
 </header>
     <section class="hero" style="padding:0;">
         <!-- Local Hero Image -->
@@ -82,7 +68,6 @@
         </a>
         </div>
     </section>
-
     <section id="services">
         <h2>Our Services</h2>
         <!--<h1>Notice: Following Georgia law (O.C.G.A. § 43-41-2(9)), we handle residential repair projects capped at $2,500 per project (labor + materials).</h1>-->
@@ -98,7 +83,6 @@
                 <li>Smoke & Carbon Monoxide Detectors: Replacing batteries or installing new battery-operated units.</li>
             </ul>
             </div>
-
         <div class="card">
                 <h3>Low-Voltage & Smart Home Services</h3>
                 <ul>
@@ -109,7 +93,6 @@
                     <li>Landscape Lighting: Installing low-voltage (plug-in transformer-based) garden and pathway lights.</li>
                 </ul>
             </div>
-        
         <div class="card">
                 <h3>Plumbing Services</h3>
                 <ul>
@@ -123,7 +106,6 @@
                     <li>Leak Repair: Fixing minor leaks under sinks or in visible supply lines.</li>
                 </ul>
             </div>
-
             <div class="card">
                 <h3>General Home Repairs & Maintenance</h3>
                 <ul>
@@ -140,26 +122,29 @@
                     </ul>
             </div>
         </div>
-
         <!-- Insert this between Services and Why Choose Us -->
         <div style="background-color: #ffffff; padding: 40px 10%; text-align: center; border-bottom: 1px solid #f0f0f0;">
-
         <h1><strong>Note:</strong> Handy Rafy LLC is a professional handyman service. We are not licensed plumbers or electricians. Our services are limited to minor repairs, maintenance, and "remove-and-replace" tasks. In compliance with Georgia law, we do not perform new installations or projects exceeding $2,500.</h1>
-
         <h2 style="font-size: 24px; color: var(--dark-blue); margin-bottom: 10px;">
         Not sure if we’re the right fit? Just ask Rafy!
         </h2>
+
+
+
         <a href="sms:+16786987649?body=Hi! I am interested in your handyman services." 
             class="cta-box" 
             style="text-decoration: none; display: block; max-width: 600px; margin: 0px auto; text-align: center;">
-            <div style="background-color: #ffcc00; padding: 0px; border-radius: 8px; font-weight: bold; text-transform: uppercase; font-size: 14px; color: darkblue; border: none solid #000;">
+            <div style="background-color: #ffc107; padding: 0px; border-radius: 8px; font-weight: bold; text-transform: uppercase; font-size: 14px; color: darkblue; border: none solid #000;">
                 Text a photo and description of your project to Rafy and he'll let you know!
             </div>
         </a>
-    
 
 
-       <section id="gallery" style="background:#f3f4f6;">
+<!--f3f4f6-->
+
+
+
+        <section id="gallery" style="background:#0a2968;">
         <h2>Recent Projects</h2>
         <div class="slider-container">
             <div class="slider-wrapper" id="sliderWrapper">
@@ -183,10 +168,7 @@
                     <img src="img/Project4.jpg" alt="Work 4">
                     <div class="ba-label">Project4</div>
                 </div>
-            
-
-            
-                         <!-- Slide 5 -->
+                <!-- Slide 5 -->
                 <div class="slider-slide">
                     <img src="img/5.jpg" alt="Work 5">
                     <div class="ba-label">DRYWALL REPAIR</div>
@@ -206,13 +188,12 @@
                     <img src="img/Project8.jpg" alt="Work 8">
                     <div class="ba-label">TV.. MOUNTING</div>
                 </div>
-
-            
             </div>
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </section>
-    <script>
+
+<script>
         let currentSlide = 0;
         function moveSlide(direction) {
             const wrapper = document.getElementById('sliderWrapper');
@@ -269,7 +250,6 @@
                 <p> </p>
                 <p> </p>
             </div>
-
             <div style="background:#f9f9f9; padding:20px; border-radius:8px; border-left:5px solid var(--yellow);">
                 <p style="font-size: 0.95rem; color: #555; margin:0;">
                     <strong>Disclaimer & Licensing Information:</strong> In compliance with Georgia State Regulations, please be advised that Handy Rafy LLC is a professional handyman service provider and is not a state-licensed residential or general contractor.
@@ -280,7 +260,6 @@
             <button onclick="closeWho()" style="display:block; margin:20px auto 0; padding:10px 25px; background:var(--dark-blue); color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
         </div>
     </div>
-
     <!-- Al final de tu body -->
     <script>
         // Función para abrir la ventana
@@ -314,22 +293,20 @@
         </p> 
         </div>
 </div>
-
 <footer style="background: #1f2937; color: white; padding: 60px 5% 20px; font-family: sans-serif;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
         <!-- Column 1: Logo & Bio -->
         <div>
             <h3 style="color: #ffc107; font-size: 1.5rem; margin-bottom: 5px;">Handy Rafy <span style="font-weight: 300; font-size: 0.9rem; color: #ccc;">LLC</span></h3>
-            <!-- ADDED: Your name here connects the brand to the person -->
-            <p style="color: #eee; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 0.5px;">Owned & Operated by Rafael J. Sanchez</p>
-            <p style="color: #9ca3af; line-height: 1.6;">
-                Your local expert for home maintenance and repairs in Marietta, GA. Quality craftsmanship and professional service on every project.
-            </p>
-            <div style="margin-top: 20px;">
-                <span style="background: #22c55e; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">✅ FULLY INSURED</span>
-            </div>
+                <!-- ADDED: Your name here connects the brand to the person -->
+                <p style="color: #eee; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 0.5px;">Owned & Operated by Rafael J. Sanchez</p>
+                <p style="color: #9ca3af; line-height: 1.6;">
+                   Your local expert for home maintenance and repairs in Marietta, GA. Quality craftsmanship and professional service on every project.
+                </p>
+                <div style="margin-top: 20px;">
+                    <span style="background: #22c55e; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">✅ FULLY INSURED</span>
+                </div>
         </div>
-
         <!-- Column 2: Quick Links -->
         <div>
             <h4 style="border-left: 4px solid #ffc107; padding-left: 10px; margin-bottom: 20px;">Our Services</h4>
@@ -352,7 +329,7 @@
                 <span style="color: #ffc107;">📞</span> <a href="tel:(678) 698-7649" style="color: white; text-decoration: none; font-weight: bold;">(678) 698-7649</a>
             </p>
             <p style="display: flex; align-items: center; gap: 10px;">
-                <span style="color: #ffc107;">✉️</span> <a href="mailto:HandyRafyMarietta@gmail.com" style="color: white; text-decoration: none;">HandyRafyMarietta@gmail.com</a>
+               <span style="color: #ffc107;">✉️</span> <a href="mailto:HandyRafyMarietta@gmail.com" style="color: white; text-decoration: none;">HandyRafyMarietta@gmail.com</a>
             </p>
         </div>
     </div>
@@ -362,18 +339,11 @@
         <!-- ADDED: Name in the legal line -->
         <p>&copy; 2026 <strong>Handy Rafy LLC</strong>. Owned and operated by <strong>Rafael J. Sanchez</strong>.</p>
         <p style="margin-top: 5px; opacity: 0.8;">Professional Handyman Services | Marietta, GA</p>
+        <p style="margin: 0; flex: 1; text-align: right; opacity: 0.8; font-size: 0.8rem;">
+            Version: 1.0
+        </p>
     </div>
 </footer>
-
-
-
-
-
-
 </body>
-
-
-
-
 </html>
 

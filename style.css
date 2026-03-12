@@ -1,91 +1,90 @@
-        /* Contenedor principal del carrusel */
-        .slider-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
+/* Contenedor principal del carrusel */
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 
-        /* El "riel" que mueve las imágenes */
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+/* El "riel" que mueve las imágenes */
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-        /* CADA DIAPOSITIVA - Mostrando 2 a la vez */
-        .slider-slide {
-            min-width: 50%; /* Esto hace que quepan dos */
-            box-sizing: border-box;
-            padding: 5px;
-            position: relative;
-        }
+/* CADA DIAPOSITIVA - Mostrando 2 a la vez */
+.slider-slide {
+    min-width: 50%; /* Esto hace que quepan dos */
+    box-sizing: border-box;
+    padding: 5px;
+    position: relative;
+}
 
-        .slider-slide img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-            border-radius: 8px;
-        }
+.slider-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+*/
+.ba-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        .ba-label {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            text-align: center;
-            font-size: 12px;
-            padding: 5px 0;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+:root {
+    --dark-blue: #1e3a8a;
+    --light-blue: #ebf3f9;
+    --yellow: #ffc107;
+    --green: #22c55e;
+    --text-dark: #1f2937;
+    --text-gray: #4b5563;
+}
 
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: var(--text-dark);
+    background-color: #ffffff;
+    line-height: 1.5;
+}
 
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
 
-        :root {
-            --dark-blue: #1e3a8a;
-            --light-blue: #ebf3f9;
-            --yellow: #ffc107;
-            --green: #22c55e;
-            --text-dark: #1f2937;
-            --text-gray: #4b5563;
-        }
+.logo { font-weight: 800; font-size: 22px; color: #374151; }
+nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin-left: 20px; font-size: 14px; }
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            color: var(--text-dark);
-            background-color: #ffffff;
-            line-height: 1.5;
-        }
+.btn-contact { background: var(--dark-blue); color: white; padding: 8px 18px; border-radius: 4px; }
 
-        /* Header */
-   
-   
-   
-        header {
-   
+/* Hero Section */
+.hero { display: flex; background: var(--light-blue); min-height: 400px; }
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 100;
-        }
-        .logo { font-weight: 800; font-size: 22px; color: #374151; }
-        nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin-left: 20px; font-size: 14px; }
-        .btn-contact { background: var(--dark-blue); color: white; padding: 8px 18px; border-radius: 4px; }
+.hero-img { width: 35%; object-fit: cover; }
 
-        /* Hero Section */
-        .hero { display: flex; background: var(--light-blue); min-height: 400px; }
-        .hero-img { width: 35%; object-fit: cover; }
-        .hero-content { width: 65%; padding: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .hero-content h1 { font-size: 48px; color: var(--dark-blue); margin: 10px 0; font-weight: 900; line-height: 1.1; }
+.hero-content { width: 65%; padding: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+.hero-content h1 { font-size: 48px; color: var(--dark-blue); margin: 10px 0; font-weight: 900; line-height: 1.1; }
+
 .cta-box { 
     background: var(--yellow); 
     padding: 20px; /* Mucho mejor para celulares */
@@ -96,22 +95,18 @@
     margin-top: 20px; 
 }
        
-       
-        .cta-box .phone { font-size: 24px; font-weight: 700; color: var(--dark-blue); margin-top: 5px; }
-
-
-
+.cta-box .phone { font-size: 24px; font-weight: 700; color: var(--dark-blue); margin-top: 5px; }
         /* Services Grid */
         section { padding: 60px 10%; }
         h1 { text-align: center; font-size: 16px; font-weight: 500; margin-bottom: 10px; }
         h2 { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 10px; }
-
+        
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
         .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid #3b82f6; }
+        
         .card h3 { margin-top: 0; color: var(--dark-blue); }
-
-
-
+        
         /* --- LOCAL CHECKMARK LOGIC --- */
         .card ul, .why-list {
             list-style: none;
@@ -119,95 +114,87 @@
             margin-top: 15px;
         }
 
-        .card li, .why-list li {
-            background-image: url('img/checkmark.png'); /* Path to your local icon */
-            background-repeat: no-repeat;
-            background-position: left center;
-            background-size: 18px;
-            padding-left: 30px; /* Space for the icon */
-            margin-bottom: 12px;
-            font-weight: 500;
-            color: var(--text-gray);
-            display: flex;
-            align-items: center;
-            min-height: 24px;
-        }
+    .card li, .why-list li {
+        background-image: url('img/checkmark.png'); /* Path to your local icon */
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 18px;
+        padding-left: 30px; /* Space for the icon */
+        margin-bottom: 12px;
+        font-weight: 500;
+        color: var(--text-gray);
+        display: flex;
+        align-items: center;
+        min-height: 24px;
+    }
 
-        /* Why Choose Us Section */
-        .why-choose { background-color: #f3f4f6; }
-        .why-container { display: flex; gap: 50px; align-items: center; max-width: 1000px; margin: 0 auto; }
-        
-        /* Gallery aqui */
-        .ba-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .ba-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
-        .ba-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
-        .ba-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; font-size: 10px; text-align: center; padding: 3px 0; font-weight: bold; text-transform: uppercase; }
-        .ba-label.after { background: var(--dark-blue); }
+    /* Why Choose Us Section */
+    .why-choose { background-color: #f3f4f6; }
+    .why-container { display: flex; gap: 50px; align-items: center; max-width: 1000px; margin: 0 auto; }
 
+    /* Gallery aqui */
+    .ba-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ba-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+    .ba-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .ba-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; font-size: 10px; text-align: center; padding: 3px 0; font-weight: bold; text-transform: uppercase; }
+    .ba-label.after { background: var(--dark-blue); }
 
-        /* Floating Button */
-        .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; }
+    /* Floating Button */
+    .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; }
 
-       @media (max-width: 768px) {
+    @media (max-width: 768px) {
     /* 1. Forzamos el centrado total del Hero */
-    .hero { 
-        flex-direction: column !important; /* Imagen arriba, contenido abajo */
-        align-items: center !important;    /* Centra horizontalmente todo el bloque */
-        text-align: center !important;     /* Centra el texto */
-        width: 100% !important;
-        padding: 0 !important;
+        .hero { 
+            flex-direction: column !important; /* Imagen arriba, contenido abajo */
+            align-items: center !important;    /* Centra horizontalmente todo el bloque */
+            text-align: center !important;     /* Centra el texto */
+            width: 100% !important;
+            padding: 0 !important;
+        }
+        .hero-img { 
+            width: 100% !important; 
+            height: auto !important; 
+            max-height: 250px; /* Para que la foto no sea gigante */
+            object-fit: cover;
+        }
+        .hero-content { 
+            width: 100% !important; 
+            padding: 30px 20px !important; /* Espacio para que no toque los bordes del cel */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;    /* Centra el H1 y el CTA-BOX */
+        }
+        .hero-content h1 {
+            font-size: 28px !important;
+            width: 100% !important;
+            margin: 10px 0 !important;
+        }
+        /* 2. Centramos el Rectángulo Amarillo */
+        .cta-box { 
+            margin: 20px auto !important;      /* El 'auto' lo centra horizontalmente */
+            width: 90% !important;             /* Casi todo el ancho */
+            max-width: 320px !important;       /* Pero no más de 320px */
+            padding: 15px !important;          /* Espacio interno normal */
+            display: block !important;
+        }
     }
-
-    .hero-img { 
-        width: 100% !important; 
-        height: auto !important; 
-        max-height: 250px; /* Para que la foto no sea gigante */
-        object-fit: cover;
-    }
-
-    .hero-content { 
-        width: 100% !important; 
-        padding: 30px 20px !important; /* Espacio para que no toque los bordes del cel */
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;    /* Centra el H1 y el CTA-BOX */
-    }
-
-    .hero-content h1 {
-        font-size: 28px !important;
-        width: 100% !important;
-        margin: 10px 0 !important;
-    }
-
-    /* 2. Centramos el Rectángulo Amarillo */
-    .cta-box { 
-        margin: 20px auto !important;      /* El 'auto' lo centra horizontalmente */
-        width: 90% !important;             /* Casi todo el ancho */
-        max-width: 320px !important;       /* Pero no más de 320px */
-        padding: 15px !important;          /* Espacio interno normal */
-        display: block !important;
-    }
+.lista-optimizada {
+    display: flex;         /* Alinea en horizontal */
+    flex-wrap: wrap;       /* Si no caben en el celular, bajan a la siguiente línea */
+    gap: 20px;             /* Espacio uniforme entre palabras */
+    padding: 0;
+    font-weight: bold;     /* Pone las letras en negrita */
+    margin-top: 0; /* Controla qué tan cerca está del H1 */               
+    list-style: none;
 }
 
-
-            
-                .lista-optimizada {
-                    display: flex;         /* Alinea en horizontal */
-                    flex-wrap: wrap;       /* Si no caben en el celular, bajan a la siguiente línea */
-                    gap: 20px;             /* Espacio uniforme entre palabras */
-                    padding: 0;
-                    font-weight: bold;     /* Pone las letras en negrita */
-                    margin-top: 0; /* Controla qué tan cerca está del H1 */               
-                    list-style: none;
-                }
-
-                /* Ajuste opcional para celulares muy pequeños */
-                    @media (max-width: 480px) {
-                        .lista-optimizada {
-                        gap: 10px;           /* Reduce el espacio si la pantalla es pequeña */
-                        justify-content: center; /* Centra los elementos en el móvil */
-                     height: auto; /* Permite que la lista crezca en altura si es necesario */
-                       
-                    }
-                }
+/* Ajuste opcional para celulares muy pequeños */
+    @media (max-width: 480px) {
+        .lista-optimizada {
+        gap: 10px;           /* Reduce el espacio si la pantalla es pequeña */
+        justify-content: center; /* Centra los elementos en el móvil */
+        height: auto; /* Permite que la lista crezca en altura si es necesario */
+        
+    }
+}
             
