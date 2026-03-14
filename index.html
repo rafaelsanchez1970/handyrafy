@@ -37,6 +37,7 @@
 
 
 </head>
+<body>
 <header>
     <div style="font-weight: 800; font-size: 1.4rem; color: var(--dark); display: flex; align-items: center; gap: 10px;">
       <!-- Tu imagen/logo aquí -->
@@ -68,6 +69,7 @@
         </a>
         </div>
     </section>
+
     <section id="services">
         <h2>Our Services</h2>
         <!--<h1>Notice: Following Georgia law (O.C.G.A. § 43-41-2(9)), we handle residential repair projects capped at $2,500 per project (labor + materials).</h1>-->
@@ -129,8 +131,6 @@
         Not sure if we’re the right fit? Just ask Rafy!
         </h2>
 
-
-
         <a href="sms:+16786987649?body=Hi! I am interested in your handyman services." 
             class="cta-box" 
             style="text-decoration: none; display: block; max-width: 600px; margin: 0px auto; text-align: center;">
@@ -139,12 +139,9 @@
             </div>
         </a>
 
+    </section>
 
-<!--f3f4f6-->
-
-
-
-        <section id="gallery" style="background:f3f4f6;">
+    <section id="gallery" style="background:#f3f4f6;">
         <h2>Recent Projects</h2>
         <div class="slider-container">
             <div class="slider-wrapper" id="sliderWrapper">
@@ -191,7 +188,7 @@
             </div>
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </section>
+    
 
 <script>
         let currentSlide = 0;
@@ -278,9 +275,10 @@
             }
         }
     </script>
-</section>
-<!-- Modal Window -->
-<div id="whoWeAreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:99999; justify-content:center; align-items:center; padding:20px;">
+    </section>
+ 
+    <!-- Modal Window -->
+    <div id="whoWeAreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:99999; justify-content:center; align-items:center; padding:20px;">
     <div style="background:#ffffff !important; padding:30px; border-radius:15px; max-width:600px; width:100%; position:relative; box-shadow: 0 20px 40px rgba(0,0,0,0.4); max-height:90vh; overflow-y:auto; display:block !important;">
         
         <!-- Close Button -->
@@ -292,7 +290,8 @@
             Welcome to <strong>Handy Rafy LLC</strong>, your reliable partner for home maintenance and repairs in Marietta and the surrounding areas. We pride ourselves on providing high-quality, professional handyman services for those smaller projects that keep your home running smoothly.
         </p> 
         </div>
-</div>
+    </div>
+
 <footer style="background: #1f2937; color: white; padding: 60px 5% 20px; font-family: sans-serif;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
         <!-- Column 1: Logo & Bio -->
@@ -344,6 +343,8 @@
         </p>
     </div>
 </footer>
+
+
 </body>
 </html>
 

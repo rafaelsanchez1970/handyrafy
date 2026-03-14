@@ -3,8 +3,10 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    margin-left: 1;
+    margin-right: 1;   
 }
-
+    
 /* El "riel" que mueve las imágenes */
 .slider-wrapper {
     display: flex;
@@ -26,7 +28,7 @@
     display: block;
     border-radius: 8px;
 }
-*/
+
 .ba-label {
     position: absolute;
     bottom: 10px;
@@ -142,6 +144,64 @@ nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin
     /* Floating Button */
     .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; }
 
+
+
+/* --- AJUSTE ESPECÍFICO PARA TABLETS --- */
+/* --- BLOQUE OPTIMIZADO PARA TABLETS (769px a 1100px) --- */
+@media (min-width: 769px) and (max-width: 1100px) {
+    
+    /* 1. Ajuste del Hero para que no se vea "aplastado" */
+    .hero {
+        flex-direction: row; 
+        min-height: 450px; /* Un poco más de altura para que respire el diseño */
+    }
+
+    .hero-img {
+        width: 60% !important; /* Aumentamos el ancho de la imagen */
+        height: 100%;
+        object-fit: cover;
+        /* SOLUCIÓN AL CORTE: Alinea la imagen a la izquierda para que no se pierda ese lado */
+        object-position: left center !important; 
+    }
+
+    .hero-content {
+        width: 55% !important;
+        padding: 30px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 34px !important; /* Tamaño intermedio para que el texto no salte 5 líneas */
+        line-height: 1.2;
+    }
+
+    /* 2. Ajuste de márgenes de las secciones */
+    section {
+        padding: 50px 5% !important; /* Bajamos del 10% al 5% para ganar espacio lateral */
+    }
+
+    /* 3. Ajuste de la cuadrícula de servicios */
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr); /* En tablet es mejor 2 columnas que 3 */
+        gap: 20px;
+    }
+
+    /* 4. Ajuste de la sección "Por qué elegirnos" */
+    .why-container {
+        flex-direction: column; /* Apilamos la galería y la lista para que no se amontonen */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .ba-gallery {
+        width: 100%; /* La galería toma todo el ancho disponible */
+    }
+}
+
+
+
     @media (max-width: 768px) {
     /* 1. Forzamos el centrado total del Hero */
         .hero { 
@@ -152,7 +212,7 @@ nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin
             padding: 0 !important;
         }
         .hero-img { 
-            width: 100% !important; 
+            width: 90% !important; 
             height: auto !important; 
             max-height: 250px; /* Para que la foto no sea gigante */
             object-fit: cover;
