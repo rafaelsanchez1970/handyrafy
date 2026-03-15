@@ -69,7 +69,6 @@
         </a>
         </div>
     </section>
-
     <section id="services">
         <h2>Our Services</h2>
         <!--<h1>Notice: Following Georgia law (O.C.G.A. § 43-41-2(9)), we handle residential repair projects capped at $2,500 per project (labor + materials).</h1>-->
@@ -140,7 +139,7 @@
         </a>
 
     </section>
-
+    <!--f3f4f6-->
     <section id="gallery" style="background:#f3f4f6;">
         <h2>Recent Projects</h2>
         <div class="slider-container">
@@ -148,42 +147,42 @@
                 <!-- Slide 1 -->
                 <div class="slider-slide">
                     <img src="img/Project1.jpg" alt="Work 1">
-                    <div class="ba-label">DRYWALL REPAIR</div>
+                    <div class="ba-label">Before</div>
                 </div>
                 <!-- Slide 2 -->
                 <div class="slider-slide">
                     <img src="img/Project2.jpg" alt="Work 2">
-                    <div class="ba-label">INTERIOR PAINTING</div>
+                    <div class="ba-label">After</div>
                 </div>
                 <!-- Slide 3 -->
                 <div class="slider-slide">
                     <img src="img/Project3.jpg" alt="Work 3">
-                    <div class="ba-label">DECK REPAIR</div>
+                    <div class="ba-label">Before</div>
                 </div>
                 <!-- Slide 4 -->
                 <div class="slider-slide">
                     <img src="img/Project4.jpg" alt="Work 4">
-                    <div class="ba-label">Project4</div>
+                    <div class="ba-label">After</div>
                 </div>
                 <!-- Slide 5 -->
                 <div class="slider-slide">
                     <img src="img/5.jpg" alt="Work 5">
-                    <div class="ba-label">DRYWALL REPAIR</div>
+                    <div class="ba-label">Before</div>
                 </div>
                 <!-- Slide 6 -->
                 <div class="slider-slide">
                     <img src="img/Project6.jpg" alt="Work 6">
-                    <div class="ba-label">INTERIOR PAINTING</div>
+                    <div class="ba-label">After</div>
                 </div>
                 <!-- Slide 7 -->
                 <div class="slider-slide">
                     <img src="img/Project7.jpg" alt="Work 7">
-                    <div class="ba-label">DECK REPAIR</div>
+                    <div class="ba-label">Before</div>
                 </div>
                 <!-- Slide 8 -->
                 <div class="slider-slide">
                     <img src="img/Project8.jpg" alt="Work 8">
-                    <div class="ba-label">TV.. MOUNTING</div>
+                    <div class="ba-label">After</div>
                 </div>
             </div>
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -201,12 +200,14 @@
             currentSlide += direction;
             // Evitar que se salga de los límites
             if (currentSlide < 0) {
-                currentSlide = 0;
-            } else if (currentSlide > maxIndex) {
                 currentSlide = maxIndex;
+                // currentSlide = 0;
+            } else if (currentSlide > maxIndex) {
+                currentSlide = 1
+                //currentSlide = maxIndex;
             }
-            // Cada movimiento es del 50% porque cada slide ocupa la mitad
-            const offset = -(currentSlide * 50);
+            // Cada movimiento es del 100% porque cada slide ocupa el 100% del contenedor
+            const offset = -(currentSlide * 100);
             wrapper.style.transform = `translateX(${offset}%)`;
         }
 
@@ -347,4 +348,3 @@
 
 </body>
 </html>
-
