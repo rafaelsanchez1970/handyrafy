@@ -1,3 +1,4 @@
+
 /* Contenedor principal del carrusel */
 .slider-container {
     position: relative;
@@ -188,7 +189,8 @@ nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin
 /* --- AJUSTE ESPECÍFICO PARA TABLETS --- */
 /* --- BLOQUE OPTIMIZADO PARA TABLETS (769px a 1100px) --- */
 @media (min-width: 769px) and (max-width: 1100px) {
-    
+
+
     /* 1. Ajuste del Hero para que no se vea "aplastado" */
     .hero {
         flex-direction: row; 
@@ -237,6 +239,67 @@ nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin
     .ba-gallery {
         width: 100%; /* La galería toma todo el ancho disponible */
     }
+
+    /* --- AJUSTE PARA COMPUTADORAS (PANTALLAS GRANDES) --- */
+@media (min-width: 1101px) {
+    .recent-projects-grid { 
+        display: grid !important;
+        /* Usamos 3 columnas pero con mucha más altura */
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 30px !important; 
+    }
+
+    .project-card img {
+        width: 100% !important;
+        /* Proporción 3:4 hace que la imagen sea notablemente más alta que ancha */
+        aspect-ratio: 3 / 4 !important; 
+        height: 550px !important; /* Forzamos una altura generosa en píxeles */
+        object-fit: cover !important;
+        border-radius: 12px;
+    }
+}
+
+/* --- AJUSTE EXTRA: El slider también se ve "aplastado" con 40vh --- */
+@media (min-width: 1101px) {
+    .slider-container, .slider-slide {
+        height: 70vh !important; /* Subimos de 40vh a 70vh para que sea imponente en PC */
+    }
+}
+
+
+
+
+
+
+
+
+/* Dentro de tu @media (min-width: 769px) and (max-width: 1100px) */
+
+.recent-projects-grid { 
+    display: grid !important;
+    /* Bajamos a 2 columnas para que cada imagen sea más grande y alta */
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 30px !important; 
+}
+
+.project-card {
+    /* Forzamos una altura mínima para toda la tarjeta */
+    min-height: 500px !important; 
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img {
+    width: 100% !important;
+    /* Cambiamos la proporción a una más vertical (3:4) */
+    aspect-ratio: 3 / 4 !important; 
+    object-fit: cover !important;
+    /* Esto asegura que la imagen crezca para llenar el espacio */
+    flex-grow: 1;
+}
+
+
+
 }
 
 
@@ -302,3 +365,35 @@ nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin
     transform: translateY(-50%) scale(1.1); /* Crece un poquito */
     transition: all 0.2s ease;
 }
+/* ============================================================
+   ONLY FOR PC (Screens wider than 1100px)
+   Changes project images from rectangles to tall portraits
+   ============================================================ */
+@media (min-width: 1101px) {
+
+    /* Target the project images specifically */
+    .project-card img, 
+    .recent-projects-grid img, 
+    .ba-item img {
+        /* 1. Forces a vertical "Portrait" shape (3:4 ratio) */
+        aspect-ratio: 3 / 4 !important; 
+
+        /* 2. Physical height in pixels to ensure they look TALL */
+        height: 600px !important; 
+
+        /* 3. Prevents the image from stretching (it will crop instead) */
+        object-fit: cover !important;
+        
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Optional: Make the slider taller on PC as well */
+    .slider-container, 
+    .slider-slide {
+        height: 75vh !important; /* 75% of screen height */
+        min-height: 600px !important;
+    }
+}
+
+
