@@ -432,4 +432,46 @@ nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin
     }
 }
 
+/* --- SOLUCIÓN DEFINITIVA PARA IMAGEN RECORTADA EN LANDSCAPE --- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        display: flex !important;
+        flex-direction: row !important; /* Mantiene imagen y texto lado a lado */
+        min-height: 100vh !important;   /* Altura de la pantalla */
+        height: auto;
+    }
+
+    .hero-img {
+        width: 55% !important; 
+        height: 100vh !important;
+        object-fit: cover !important;
+        /* "top" obliga a que la parte de arriba de la foto SIEMPRE sea visible */
+        object-position: top center !important; 
+    }
+
+    .hero-content {
+        width: 55% !important;
+        padding: 10px 20px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra el texto verticalmente */
+    }
+
+    .hero-content h1 {
+        font-size: 20px !important; /* Texto pequeño para que no empuje el botón hacia abajo */
+        margin-bottom: 5px !important;
+    }
+
+    .cta-box {
+        padding: 10px !important;
+        margin-top: 5px !important;
+        width: 95% !important;
+        max-width: 300px !important;
+    }
+
+    .cta-box .phone {
+        font-size: 18px !important;
+    }
+}
+
 
