@@ -1,87 +1,13 @@
-
-/* Contenedor principal del carrusel */
-.slider-container {
-    position: relative;
-    width: 100%;
-    height: 40vh; /* Ajusta esta altura a tu gusto */
-    overflow: hidden;
-    border-radius: 18px;
-    
-    margin-left: 1;
-    margin-right: 1;   
-    border: #22c55e rgb(19, 25, 139) 20px;
-}
-    
-/* El "riel" que mueve las imágenes */
-.slider-wrapper {
-    display: flex;
-    width: 100%; /* El contenedor total se adaptará a los hijos */
-    transition: transform 0.5s ease-in-out;
+/* 1. RESET Y CONFIGURACIÓN */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
-
-.slider-slide {
-    flex: 0 0 100%;    /* FUERZA a que cada slide ocupe el 100% exacto */
-    width:  100%;       /* Esto hace que cada slide sea exactamente el ancho del contenedor */
-    height: 40vh;   /* Evita que se encoja */
+* {
     box-sizing: border-box;
-    padding: 0;        /* Si pones padding aquí, la foto se verá más pequeña pero el slide sigue midiendo 100% */
-    position: relative;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
-
-
-
-.slider-slide img {
-
-    width: 100%;
-    height: 100%;     /* Ajusta esta altura a tu gusto */
-    object-fit: cover;
-    display: block;
-    border-radius: 18px;
-}
-
-/* Estilo para que las flechas aparezcan sobre el contenedor de 40vh */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100; /* Las pone por encima de todo */
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 50%;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-
-
-
-
-.ba-label {
-    position: absolute;
-    bottom: 0;         /* Pegado al piso del contenedor */
-    left: 0;           /* Desde el inicio */
-    width: 100%;       /* Todo el ancho */
-    background: rgba(0,0,0,0.7);
-    padding: 10px 0;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    z-index: 10;       /* Por encima de la imagen */
-}
-
-
-
-
-
 
 :root {
     --dark-blue: #1e3a8a;
@@ -90,388 +16,904 @@
     --green: #22c55e;
     --text-dark: #1f2937;
     --text-gray: #4b5563;
+    --black: #000000;
+    --white: #ffffff;
+    --footer-back-ground: #1f2937;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     color: var(--text-dark);
-    background-color: #ffffff;
-    line-height: 1.5;
+    background-color: var(--white);
+    line-height: 1.6;
+    font-size: 1.6rem;
 }
 
-/* Header */
-header {
+/* 2. TIPOGRAFÍA */
+h1 { text-align: center; font-size: clamp(3rem, 4vw, 4rem); font-weight: 600; margin-bottom: 1.6rem; color: var(--dark-blue); }
+h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: 800; margin-bottom: 4rem; }
+h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: var(--dark-blue); margin-bottom: 4rem; }
+
+
+
+
+
+/* 1. begin the Header Layout */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    border-bottom: 1px solid #e5e7eb;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 100;
+    padding: 1rem 2rem;
+    background-color: #ffffff; /* Adjust as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle separation */
 }
 
-.logo { font-weight: 800; font-size: 22px; color: #374151; }
-nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; margin-left: 20px; font-size: 14px; }
 
-.btn-contact { background: var(--dark-blue); color: white; padding: 8px 18px; border-radius: 4px; }
+/* 2. Branding (Logo & Title) */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+}
 
-/* Hero Section */
-.hero { display: flex; background: var(--light-blue); min-height: 400px; }
+.brand-logo {
+    display: block;
+    height: 60px !important;    /* ANTES TENÍAS 0.1px, por eso no se veía */
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
 
-.hero-img { width: 35%; object-fit: cover; }
+.brand-text {
+    font-weight: 800; 
+    font-size: 1rem;         /* Aumenté el tamaño de la letra */
+    color: var(--dark-blue);
+    line-height: 1;
+    
+}
 
-.hero-content { width: 65%; padding: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.brand-name-primary {
+    color: var(--dark-blue);
+}
 
-.hero-content h1 { font-size: 48px; color: var(--dark-blue); margin: 10px 0; font-weight: 900; line-height: 1.1; }
+.brand-suffix {
+    font-size: 1rem;
+    color: #888;
+    vertical-align: middle;
+}
+
+/* 3. Navigation Links */
+.header-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 1.4rem;         /* Tamaño de letra más legible */
+    font-weight: 600;
+    color: var(--text-dark);   /* Color gris oscuro profesional */
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--dark-blue);
+}
+
+/* 4. Who We Are (El botón que querías cambiar) */
+.nav-cta {
+    color: var(--green) !important; /* CAMBIADO A NARANJA/AMARILLO */
+    font-weight: 500 !important;
+    text-transform: uppercase; /* Para que resalte más */
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.nav-cta:hover {
+    background-color: var(--yellow);
+    color: var(--white) !important;
+    text-decorat1ion: none;
+}
+/*termina el header*/
+
+
+
+
+
+
+
+
+/* --- Begin SECCIÓN HERO --- */
+.hero {
+    display: flex;
+    flex-wrap: wrap; /* Para que en celular se pongan uno sobre otro */
+    align-items: center;
+    padding: 0;
+    background-color: var(--light-blue);
+    min-height: 500px;
+    width: 100%;
+}
+
+.hero-img {
+    width: 50%;
+    height: 400px; /* Altura fija para que el banner se vea imponente */
+    object-fit: cover; /* Evita que la imagen se estire feo */
+}
+
+.hero-content {
+    width: 50%;
+    padding: 4rem;
+    display: flex; 
+
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.hero-badge {
+    font-weight: 600;
+    color: #666;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem); /* Tamaño fluido según la pantalla */
+    color: var(--dark-blue);
+    line-height: 1.2;
+    text-align: left; /* Alineado a la izquierda para un look moderno */
+    margin-bottom: 2rem;
+}
+
+.hero-list {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.hero-list li {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Botón de Acción (CTA) */
+.hero-cta {
+    display: inline-block;
+    background-color: var(--yellow);
+    color: var(--black);
+    padding: 1.5rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px); /* Efecto de levante */
+    background-color: #f1b400; /* Un amarillo un poco más oscuro al pasar el mouse */
+}
+
+
+/* --- FIN SECCIÓN HERO --- */
+
+
+
+/* 4. HERO SECTION */
+.hero-section { display: flex; flex-wrap: wrap; background: var(--light-blue); padding: 0; }
+.hero-tagline { font-weight: 600; color: #666; font-size: 1.4rem; }
+
+
+
+
+
+
+
+
+
+
+
+
+.brand-name { color: var(--dark-blue); }
+.legal-suffix { font-size: 0.9rem; color: #888; }
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-weight: 600;
+    margin-left: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.nav-highlight {
+    color: var(--green) !important;
+    font-weight: 700;
+}
 
 .cta-box { 
     background: var(--yellow); 
-    padding: 20px; /* Mucho mejor para celulares */
-    width: 90%;    /* Para que no toque los bordes */
-    max-width: 400px; /* Para que no sea gigante en PC */
-    border-radius: 8px; 
+    padding: 1.5rem 2rem;
+    border-radius: 18px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-    margin-top: 20px; 
-}
-       
-.cta-box .phone { font-size: 24px; font-weight: 700; color: var(--dark-blue); margin-top: 5px; }
-        /* Services Grid */
-        section { padding: 60px 10%; }
-        h1 { text-align: center; font-size: 16px; font-weight: 500; margin-bottom: 10px; }
-        h2 { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 10px; }
-        
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid #3b82f6; }
-        
-        .card h3 { margin-top: 0; color: var(--dark-blue); }
-        
-        /* --- LOCAL CHECKMARK LOGIC --- */
-        .card ul, .why-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-        }
-
-    .card li, .why-list li {
-        background-image: url('img/checkmark.png'); /* Path to your local icon */
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: 18px;
-        padding-left: 30px; /* Space for the icon */
-        margin-bottom: 12px;
-        font-weight: 500;
-        color: var(--text-gray);
-        display: flex;
-        align-items: center;
-        min-height: 24px;
-    }
-
-    /* Why Choose Us Section */
-    .why-choose { background-color: #f3f4f6; }
-    .why-container { display: flex; gap: 50px; align-items: center; max-width: 1000px; margin: 0 auto; }
-
-    /* Gallery aqui */
-    .ba-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .ba-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
-    .ba-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
-    .ba-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; font-size: 10px; text-align: center; padding: 3px 0; font-weight: bold; text-transform: uppercase; }
-    .ba-label.after { background: var(--dark-blue); }
-
-    /* Floating Button */
-    .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; }
-
-
-
-/* --- AJUSTE ESPECÍFICO PARA TABLETS --- */
-/* --- BLOQUE OPTIMIZADO PARA TABLETS (769px a 1100px) --- */
-@media (min-width: 769px) and (max-width: 1100px) {
-
-
-    /* 1. Ajuste del Hero para que no se vea "aplastado" */
-    .hero {
-        flex-direction: row; 
-        min-height: 450px; /* Un poco más de altura para que respire el diseño */
-    }
-
-    .hero-img {
-        width: 60% !important; /* Aumentamos el ancho de la imagen */
-        height: 100%;
-        object-fit: cover;
-        /* SOLUCIÓN AL CORTE: Alinea la imagen a la izquierda para que no se pierda ese lado */
-        object-position: left center !important; 
-    }
-
-    .hero-content {
-        width: 55% !important;
-        padding: 30px !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .hero-content h1 {
-        font-size: 34px !important; /* Tamaño intermedio para que el texto no salte 5 líneas */
-        line-height: 1.2;
-    }
-
-    /* 2. Ajuste de márgenes de las secciones */
-    section {
-        padding: 50px 5% !important; /* Bajamos del 10% al 5% para ganar espacio lateral */
-    }
-
-    /* 3. Ajuste de la cuadrícula de servicios */
-    .grid-3 {
-        grid-template-columns: repeat(2, 1fr); /* En tablet es mejor 2 columnas que 3 */
-        gap: 20px;
-    }
-
-    /* 4. Ajuste de la sección "Por qué elegirnos" */
-    .why-container {
-        flex-direction: column; /* Apilamos la galería y la lista para que no se amontonen */
-        text-align: center;
-        gap: 40px;
-    }
-
-    .ba-gallery {
-        width: 100%; /* La galería toma todo el ancho disponible */
-    }
-
-    /* --- AJUSTE PARA COMPUTADORAS (PANTALLAS GRANDES) --- */
-@media (min-width: 1101px) {
-    .recent-projects-grid { 
-        display: grid !important;
-        /* Usamos 3 columnas pero con mucha más altura */
-        grid-template-columns: repeat(3, 1fr) !important; 
-        gap: 30px !important; 
-    }
-
-    .project-card img {
-        width: 100% !important;
-        /* Proporción 3:4 hace que la imagen sea notablemente más alta que ancha */
-        aspect-ratio: 3 / 4 !important; 
-        height: 550px !important; /* Forzamos una altura generosa en píxeles */
-        object-fit: cover !important;
-        border-radius: 12px;
-    }
-}
-
-/* --- AJUSTE EXTRA: El slider también se ve "aplastado" con 40vh --- */
-@media (min-width: 1101px) {
-    .slider-container, .slider-slide {
-        height: 70vh !important; /* Subimos de 40vh a 70vh para que sea imponente en PC */
-    }
+    text-decoration: none; 
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 
 
 
 
-
-
-
-/* Dentro de tu @media (min-width: 769px) and (max-width: 1100px) */
-
-.recent-projects-grid { 
-    display: grid !important;
-    /* Bajamos a 2 columnas para que cada imagen sea más grande y alta */
-    grid-template-columns: repeat(2, 1fr) !important; 
-    gap: 30px !important; 
+/* Begin GRID Y CARDS */
+section { 
+    padding: 6rem 5%; 
+    width: 100%;
 }
+/* Contenedor de las tarjetas */
+/* Estilo de la lista dentro de las tarjetas */
 
-.project-card {
-    /* Forzamos una altura mínima para toda la tarjeta */
-    min-height: 500px !important; 
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--black);
+    border-top: 6px solid var(--dark-blue); /* LÍNEA AZUL SUPERIOR */
     display: flex;
     flex-direction: column;
-}
-
-.project-card img {
-    width: 100% !important;
-    /* Cambiamos la proporción a una más vertical (3:4) */
-    aspect-ratio: 3 / 4 !important; 
-    object-fit: cover !important;
-    /* Esto asegura que la imagen crezca para llenar el espacio */
-    flex-grow: 1;
-}
-
-
+    transition: transform 0.3s ease;
 
 }
-
-
-
-    @media (max-width: 768px) {
-    /* 1. Forzamos el centrado total del Hero */
-        .hero { 
-            flex-direction: column !important; /* Imagen arriba, contenido abajo */
-            align-items: center !important;    /* Centra horizontalmente todo el bloque */
-            text-align: center !important;     /* Centra el texto */
-            width: 100% !important;
-            padding: 0 !important;
-        }
-        .hero-img { 
-            width: 90% !important; 
-            height: auto !important; 
-            max-height: 250px; /* Para que la foto no sea gigante */
-            object-fit: cover;
-        }
-        .hero-content { 
-            width: 100% !important; 
-            padding: 30px 20px !important; /* Espacio para que no toque los bordes del cel */
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;    /* Centra el H1 y el CTA-BOX */
-        }
-        .hero-content h1 {
-            font-size: 28px !important;
-            width: 100% !important;
-            margin: 10px 0 !important;
-        }
-        /* 2. Centramos el Rectángulo Amarillo */
-        .cta-box { 
-            margin: 20px auto !important;      /* El 'auto' lo centra horizontalmente */
-            width: 90% !important;             /* Casi todo el ancho */
-            max-width: 320px !important;       /* Pero no más de 320px */
-            padding: 15px !important;          /* Espacio interno normal */
-            display: block !important;
-        }
-    }
-.lista-optimizada {
-    display: flex;         /* Alinea en horizontal */
-    flex-wrap: wrap;       /* Si no caben en el celular, bajan a la siguiente línea */
-    gap: 20px;             /* Espacio uniforme entre palabras */
+.card ul {
+    list-style: none; /* Quitamos los puntos negros */
     padding: 0;
-    font-weight: bold;     /* Pone las letras en negrita */
-    margin-top: 0; /* Controla qué tan cerca está del H1 */               
-    list-style: none;
+    margin: 0;
 }
 
-/* Ajuste opcional para celulares muy pequeños */
-    @media (max-width: 480px) {
-        .lista-optimizada {
-        gap: 10px;           /* Reduce el espacio si la pantalla es pequeña */
-        justify-content: center; /* Centra los elementos en el móvil */
-        height: auto; /* Permite que la lista crezca en altura si es necesario */
-        
-    }
+.card li {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 25px; /* Espacio para la palomita */
 }
 
-.prev:hover, .next:hover {
-    background: var(--green); /* Cambia al verde de tu marca al pasar el mouse */
-    transform: translateY(-50%) scale(1.1); /* Crece un poquito */
-    transition: all 0.2s ease;
-}
-/* ============================================================
-   ONLY FOR PC (Screens wider than 1100px)
-   Changes project images from rectangles to tall portraits
-   ============================================================ */
-@media (min-width: 1101px) {
-
-    /* Target the project images specifically */
-    .project-card img, 
-    .recent-projects-grid img, 
-    .ba-item img {
-        /* 1. Forces a vertical "Portrait" shape (3:4 ratio) */
-        aspect-ratio: 3 / 4 !important; 
-
-        /* 2. Physical height in pixels to ensure they look TALL */
-        height: 600px !important; 
-
-        /* 3. Prevents the image from stretching (it will crop instead) */
-        object-fit: cover !important;
-        
-        width: 100% !important;
-        display: block !important;
-    }
-
-    /* Optional: Make the slider taller on PC as well */
-    .slider-container, 
-    .slider-slide {
-        height: 75vh !important; /* 75% of screen height */
-        min-height: 600px !important;
-    }
+/* Dibujamos la palomita (Checkmark) con CSS */
+.card li::before {
+    content: '✓'; /* El símbolo de la palomita */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--green); /* Usamos tu variable verde */
+    font-weight: 900;
+    font-size: 1.8rem;
 }
 
-/* ============================================================
-   SOLUCIÓN PARA CELULAR Y TABLET EN HORIZONTAL (LANDSCAPE)
-   Esto evita que las imágenes se vean "aplastadas" al girar el dispositivo
-   ============================================================ */
-
-/* ============================================================
-   SOLUCIÓN EQUILIBRADA PARA HORIZONTAL (LANDSCAPE)
-   ============================================================ */
-
-/* 1. CELULARES EN HORIZONTAL (Pantallas pequeñas de lado) */
-@media screen and (max-width: 896px) and (orientation: landscape) {
-    .ba-item img, 
-    .project-card img, 
-    .slider-container, 
-    .slider-slide {
-        /* Bajamos la altura para que quepa en la pantalla del celular */
-        height: 300px !important; 
-        min-height: 300px !important;
-        aspect-ratio: 16 / 9 !important; /* Proporción más natural para celular de lado */
-    }
+/* Resaltado del nombre del servicio */
+.highlight {
+    font-weight: 700;
+    color: var(--black);
+    display: inline-block;
+    margin-right: 5px;
 }
 
-/* 2. TABLETS EN HORIZONTAL (Pantallas medianas de lado - YA FUNCIONA BIEN) */
-@media screen and (min-width: 897px) and (max-width: 1100px) and (orientation: landscape) {
-    .ba-item img, 
-    .project-card img {
-        height: 450px !important; 
-        aspect-ratio: 3 / 4 !important;
-    }
+
+
+
+
+
+/* --- SECCIÓN NOTA LEGAL Y CONTACTO --- */
+.legal-notice {
+    background-color: #ffffff;
+    padding: 6rem 5%; /* Espacio equilibrado */
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.legal-container {
+    max-width: 900px; /* Evita que el texto sea demasiado largo en PC */
+    margin: 0 auto;
+}
+
+.legal-text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+
+    text-align: justify;
+    text-justify: inter-word; /* Mejora el espacio entre palabras */
+    hyphens: auto;           /* Corta palabras largas con guión para evitar "ríos" */
+    -webkit-hyphens: auto;  
+
+}
+
+.highlight-red {
+    color: var(--black); /* Un rojo profesional para la palabra Note */
+    font-weight: 800;
+}
+
+.legal-ask {
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+    margin-top: 60px;    
+}
+
+/* El botón CTA se adapta al ancho en móvil */
+.legal-notice .cta-box {
+    display: inline-block;
+    max-width: 100%;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- GALLERY SLIDER --- */
+#gallery {
+    background: #f3f4f6;
+    padding: 6rem 5%;
+    overflow: hidden;
+
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    height: 70vh;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--black);
+    background-color: var(--light-blue); /* Fondo oscuro para resaltar las imágenes */
+}
+
+.slider-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-slide {
+    flex: 0 0 50%;
+    height: 100%;
+    position: relative;
+    padding: 5px;
+    min-width: 50%; /* Muestra 2 fotos en PC */
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+}
+
+.slider-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.ba-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--dark-blue);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 1.2 rem;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* --- MODAL WHO WE ARE --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-text {
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.6;
+    font-size: 1.4rem;
+}
+
+.legal-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid var(--yellow);
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* --- SECCIÓN GALERÍA --- */
+#gallery {
+    background: #f3f4f6;
+    padding: 6rem 5%;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slider-slide {
+    min-width: 50%; /* Muestra 2 imágenes en PC */
+    position: relative;
+    padding: 5px;
+
+    height: 100%;
+}
+
+.slider-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ba-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    pointer-events: none; /* Para que no interfiera si alguien hace clic en la foto */
+    z-index: 10;         /* Asegura que esté por encima de la imagen */
+
+}
+
+
+
+
+
+
+
     
-    .slider-container, 
-    .slider-slide {
-        height: 500px !important;
-    }
+
+
+/* Flechas del Slider */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+
+    z-index: 10; /* Ensure they are above the slides */
+    pointer-events: auto !important; /* Forces the buttons to be clickable */
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* --- MODAL WHO WE ARE --- */
+.modal-overlay {
+    display: none; /* Se activa con el script */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
 }
 
-/* --- SOLUCIÓN DEFINITIVA PARA IMAGEN RECORTADA EN LANDSCAPE --- */
-@media screen and (max-height: 500px) and (orientation: landscape) {
+.modal-window {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-title {
+    text-align: center;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+}
+
+.modal-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: justify;
+    hyphens: auto;
+}
+
+.modal-signature {
+    margin: 20px 0;
+    padding-top: 15px;
+}
+
+.sig-name { font-weight: bold; display: block; font-size: 1.5rem; }
+.sig-info { display: block; color: var(--text-color); font-size: 1.2rem; }
+
+.modal-legal-box {
+    background: var(--light-blue);
+    padding: 20px;
+    border-left: 5px solid var(--yellow);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: justify;
+    hyphens: auto;
+
+}
+
+.modal-close-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background: var(--dark-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/* --- ESTILOS DEL MODAL --- */
+.modal-overlay {
+    display: none; /* Se activa con JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-window {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    max-height: 85vh; /* Evita que se salga de la pantalla en móvil */
+    overflow-y: auto; /* Permite scroll si el texto es largo */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-close-x {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 2.4rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-title {
+    text-align: center;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.modal-description {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+.modal-signature {
+    border-bottom: 1px solid #eee;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.sig-details span {
+    display: block;
+    line-height: 1.4;
+}
+
+.sig-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.sig-info {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.modal-legal-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--yellow);
+}
+
+.modal-legal-box p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.modal-close-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1rem 2.5rem;
+    background: var(--dark-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.modal-close-btn:hover {
+    background: #142a63;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ajuste Celular */
+@media (max-width: 768px) {
+    .main-footer {
+        background: var(--footer-back-ground);
+        color: #ffffff;
+        padding: 6rem 5% 2rem;
+        font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    /* 1. Ajustes Globales de Pantalla */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    section { 
+        padding: 4rem 15px !important; 
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    /* 2. Hero (Banner Principal) */
     .hero {
-        display: flex !important;
-        flex-direction: row !important; /* Mantiene imagen y texto lado a lado */
-        min-height: 100vh !important;   /* Altura de la pantalla */
-        height: auto;
+        flex-direction: column; 
+        min-height: auto;
+        width: 100% !important;
+    }
+    .hero-img, .hero-content { 
+        width: 100% !important;
+        flex: 0 0 100%;
+        padding: 3rem 10px; 
+        text-align: center;
+    }
+    .hero-img { height: 300px; }
+    .hero-title { font-size: 2.6rem; text-align: center; }
+    /* 3. Servicios (Grid) */
+    .grid-3 {
+        display: grid !important; 
+        gap: 2.5rem !important; /* Espacio vertical entre tarjetas */
+        grid-template-columns: 1fr !important; 
+        width: 100%;
+    }
+    .card {
+        width: 100% !important;
+        margin: 0 !important;
+        display: block;
+    }
+    /* 4. Nota Legal */
+    .legal-notice { padding: 4rem 15px; }
+    .legal-ask { font-size: 1.8rem; }
+
+    /* 5. Galería */
+    .slider-slide {
+        min-width: 100%;
+        flex: 0 0 100%;
     }
 
-    .hero-img {
-        width: 55% !important; 
-        height: 100vh !important;
-        object-fit: cover !important;
-        /* "top" obliga a que la parte de arriba de la foto SIEMPRE sea visible */
-        object-position: top center !important; 
+
+    .slider-slide img { height: 280px; }
+    /* 6. Footer (Corregido y Alineado) */
+    .slider-slide {
+        flex: 0 0 100%; /* Una foto por pantalla en móviles */
+    }
+    .slider-container {
+        height: 50vh;   /* Un poco más bajo en móviles para que no tape todo */
     }
 
-    .hero-content {
-        width: 55% !important;
-        padding: 10px 20px !important;
+   
+   
+   
+    .main-footer {
+        padding: 5rem 5% 2rem;
+        text-align: center;
+    }
+
+
+
+/* IMPORTANTE: Si el contenedor padre (.footer-col) tiene 'align-items: center', 
+   debes decirle que para los contactos use la izquierda: */
+
+    .footer-col {
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centra el texto verticalmente */
+        align-items: center; /* Esto empuja todo el bloque a la izquierda */
+
+        margin-bottom: 3rem;
+    }
+    .footer-title {
+        border-left: none; /* Quitamos la línea lateral en móvil */
+    /*         border-bottom: 2px solid var(--yellow); /* Ponemos línea abajo */
+        display: inline-block;
+        padding: 0 10px 5px;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+  
+    .footer-list {
+        display: inline-block; /* Truco para alinear viñetas */
+        text-align: left;      /* Viñetas en línea recta */
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
     }
 
-    .hero-content h1 {
-        font-size: 20px !important; /* Texto pequeño para que no empuje el botón hacia abajo */
-        margin-bottom: 5px !important;
+    /* Esto quita el azul de los links del footer */
+    .footer-list a {
+        color: var(--light-blue) !important;         /* Color blanco */
+        transition: color 0.3s; /* Para que el cambio al pasar el mouse sea suave */
+        text-decoration: underline;
     }
 
-    .cta-box {
-        padding: 10px !important;
-        margin-top: 5px !important;
-        width: 95% !important;
-        max-width: 300px !important;
+    .footer-contact p {
+        color: var(--light-blue) !important;          /* ESTA LÍNEA cambia el texto a blanco */
+        justify-content: center; /* Mantiene el centrado en móvil */
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+        display: flex;           /* Asegúrate de que tenga flex para que el centrado funcione */
+        align-items: center;     /* Alinea el icono con el texto verticalmente */
+        gap: 10px;               /* Espacio entre el icono y el texto */
+        text-align: center;
     }
 
-    .cta-box .phone {
-        font-size: 18px !important;
+
+    /* ESTO QUITA EL AZUL DEL TELÉFONO Y EMAIL DEFINITIVAMENTE */
+    .footer-contact a {
+        color: var(--light-blue) !important; 
+        text-decoration: none !important;    /* Quita el subrayado si no lo quieres */
+        font-weight: bold;
+    text-decoration: underline !important; /* Si quieres que el teléfono y email sigan subrayados */
+    }
+
+    /* OPCIONAL: Que cambie a amarillo cuando pases el mouse o lo toques */
+    .footer-contact a:hover {
+        color: var(--yellow) !important;
+    }
+
+/* IMPORTANTE: Si tienes enlaces (teléfono o email), también debes ponerlos blancos */
+    .footer-badge span {
+        display: inline-block;
+        margin-top: 10rem;
+    }
+    .footer-bottom {
+        margin-top: 3rem;
+        padding-top: 2rem;
     }
 }
-
-
