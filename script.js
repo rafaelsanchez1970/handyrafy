@@ -52,3 +52,7 @@ window.onclick = function(event) {
         document.body.style.overflow = "auto";
     }
 };
+// Inicializa los iconos de Lucide al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+});

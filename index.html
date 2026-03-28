@@ -21,6 +21,8 @@
     <meta property="og:image:height" content="630">
 
     <link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com"></script>
+
 </head>
 
 <!-- El toque final para Google: Datos Estructurados (Schema) llenar datos cuando ya tengas el hosting-->
@@ -226,57 +228,93 @@
     </div>
 </div>
 
-<footer class="main-footer">
-    <div class="footer-grid">
-        <!-- Columna 1: Logo & Bio -->
-        <div class="footer-col">
-            <h3 class="footer-logo">Handy Rafy <span class="footer-suffix">LLC</span></h3>
-            <p class="footer-owner">Owned & Operated by Rafael J. Sanchez</p>
-            <p class="footer-bio">
-                Your local expert for home maintenance and repairs in Marietta, GA. Quality craftsmanship and professional service on every project.
-            </p>
-            <div class="footer-badge">
-                <span>✅ FULLY INSURED</span>
+
+
+
+
+<footer class="footer-container">
+    <div class="footer-content">
+  
+        <!-- Título Principal -->
+        <h2 class="footer-title">HANDY RAFY SERVICES LLC</h2>
+  
+        <!-- Sección de Servicios -->
+        <div class="card-group">
+            <div class="info-card">
+                <ul>
+                    <li> 
+                        <img src="img/electric2.svg" alt="Electric Maintenance" class="card-icon">
+                        <span>Electric Maintenance...</span>
+                    </li>
+                    <li>
+                        <img src="img/low-voltage.svg" alt="Low-Voltage and Smart Home" class="card-icon">
+                        <span>Low-Voltage and smart home...</span>
+                    </li>
+                    <li>
+                        <img src="img/plumbing1.svg" alt="Plumbing Services" class="card-icon">
+                        <span>Plumbing Services</span>
+                    </li>
+                    <li>
+                        <img src="img/general-repairs.svg" alt="General Repairs" class="card-icon">
+                        <span>General Repairs</span>
+                    </li>
+                    <li>
+                        <img src="img/Not-Sure.png" alt="Not Sure? Just Ask Rafy!" class="card-icon">
+                        <span>Not sure? Just ask Rafy!</span>
+                    </li>
+                </ul>
             </div>
-        </div>
+            
+            <!-- Sección de Contacto -->
+            <div class="contact-section">
+                <h3 class="contact-title">Contact Us</h3>
+                <p class="contact-subtitle">GET IN TOUCH</p>
 
-        <!-- Columna 2: Quick Links -->
-        <div class="footer-col">
-            <h4 class="footer-title">Our Services</h4>
-            <ul class="footer-list">
-                <li><a href="#electric">• Electric Maintenance & Minor Electrical Jobs</a></li>
-                <li><a href="#low-voltage">• Low-Voltage and smart home services</a></li>
-                <li><a href="#plumbing">• Plumbing Services</a></li>
-                <li><a href="#general">• General Repairs</a></li>
-                <li><a href="#services">• future add</a></li>
-                <li><a href="#text-rafy">• Not sure? Just ask Rafy!</a></li>
-            </ul>
-        </div>
-
-        <!-- Columna 3: Contact Info -->
-        <div class="footer-col">
-            <h4 class="footer-title">Contact Us</h4>
-            <div class="footer-contact">
-                <p><span>📍</span> Marietta, GA and surrounding areas</p>
-                <p><span class="emoji-color">📞</span> <a href="tel:6786987649">(678) 698-7649</a></p>
-                <p><span>📧</span> <a href="mailto:HandyRafyMarietta@gmail.com">HandyRafyMarietta@gmail.com</a></p>
-                <div class="footer-links">
-                    <!-- Estos activan las funciones en tu script.js -->
-                   <a href="#" onclick="openPrivacy(); return false;">Privacy Policy</a>
-                <!--        <a href="#" id="privacyBtn">Privacy Policy</a> -->
-                </div>
-                     <p class="copyright">&copy; 2024 Handy Rafy LLC. All rights reserved.</p>
-
+                <div class="contact-card">
+                    <span class="icon-pin">📍</span>
+                    <div class="text-group">
+                        <strong>Marietta, GA and</strong>
+                        <span>surrounding areas</span>
                     </div>
-    </div>
+            </div>
 
-    <!-- Barra de Copyright -->
-    <div class="footer-bottom">
-        <p>Cobb County Business License: L1234567890</p>
-        <p>&copy; 2026 <strong>Handy Rafy LLC</strong>. Owned and operated by <strong>Rafael J. Sanchez</strong>.</p>
-        <p class="footer-version">Version: 1.0</p>
+            <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="contact-card highlight-call">
+            <span class="icon-phone">📞</span>
+            <div class="text-group">
+            <span>TAP TO TEXT:</span>
+            (678) 698-7649
+            </div>
+            </a>
+
+            <a href="mailto:HandyRafyMarietta@gmail.com" class="contact-card">
+            <span class="icon-mail">✉️</span>
+            <div class="text-group">
+            <span>EMAIL US:</span>
+                HandyRafyMarietta@gmail.com
+            </div>
+            </a>
+            </div>
+
+            <!-- Pie de página inferior -->
+            <div class="footer-bottom">
+                <a href="javascript:void(0)" onclick="openPrivacy()">Privacy Policy</a>
+                <p class="license">COBB COUNTY BUSINESS LICENSE: L1234567890</p>
+                <p class="copyright">© 2026 Handy Rafy LLC. Owned and operated by Rafael J. Sanchez.</p>
+                <p class="version">VERSION: 1.0</p>
+            </div>
+
     </div>
 </footer>
+
+
+
+
+
+
+
+
+
+
 
 <!-- Combined Payments & FAQ Modal -->
 <div id="paymentFaqModal" class="modal-overlay">
@@ -346,27 +384,86 @@
     </div>
 </div>
 
-<!-- Added class "modal" to match your JS logic -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="privacyModal" class="modal modal-overlay">
     <div class="modal-content">
-        <span class="close" onclick="closePrivacy()">&times;</span>
-        <h2>Privacy Policy</h2>
-        <p>Your privacy is important to us. We only use your information to provide handyman services and quotes.</p>
-        <ul>
-            <li>We do not sell your data.</li>
-            <li>Photos sent are used only for quoting purposes.</li>
-            <li><strong>1. INTERNAL RECORDS:</strong> We collect your name, phone, and address to maintain a private customer history...</li>
-            <li><strong>2. DATA SAFETY:</strong> We NEVER sell your data to third parties.</li>
-            <li><strong>3. OPT-OUT:</strong> You can stop receiving SMS at any time by replying 'STOP'.</li>
-            <li><strong>4. SMS CONSENT:</strong> By texting us, you agree to receive a reply and service-related messages.</li>
-            <li><strong>5. SERVICE FOLLOW-UP:</strong> We may send a text a few days after completion to ensure you are 100% satisfied with the work.</li>
-            <li><strong>6. ESTIMATES:</strong> Estimates are based on initial photos. Final pricing may change if unforeseen issues are discovered during the repair.</li>
-            <li><strong>7. PROJECT PHOTOS:</strong> We take 'Before & After' photos of our work and may display them in our gallery to showcase our services.</li>
-            <li><strong>8. YOUR RIGHT TO REMOVE:</strong> If you do not want your project photos online, text us at +1 (678) 698-7649 and we will remove them immediately.</li>
-            <li><strong>9. SECURITY:</strong> We take reasonable steps to protect your data. However, no mobile transmission is 100% secure.</li>
-        </ul>
+        <!-- Encabezado Estilo App -->
+        <header class="modal-header-modern">
+            <h1>SERVICE TERMS</h1>
+            <div class="modal-nav-mini">
+                <span class="close-text" onclick="closePrivacy()">CLOSE [X]</span>
+                <span class="policy-text">Privacy Policy</span>
+            </div>
+        </header>
+
+        <div class="cards-wrapper">
+            <!-- Sección 1 y 2 combinadas -->
+            <section class="policy-card">
+                <i data-lucide="shield-check"></i>
+                <div class="card-info">
+                    <h2>Registros y Seguridad</h2>
+                    <p>No vendemos tus datos. Recopilamos nombre y dirección solo para tu historial privado de cliente.</p>
+                </div>
+            </section>
+
+            <!-- Sección 3 y 4 -->
+            <section class="policy-card">
+                <i data-lucide="message-square-more"></i>
+                <div class="card-info">
+                    <h2>Consentimiento de SMS</h2>
+                    <p>Al escribirnos, aceptas recibir respuestas del servicio. Puedes cancelar enviando "STOP".</p>
+                </div>
+            </section>
+
+            <!-- Sección 5 -->
+            <section class="policy-card">
+                <i data-lucide="calendar-check"></i>
+                <div class="card-info">
+                    <h2>Seguimiento</h2>
+                    <p>Podríamos contactarte días después para asegurar que estés 100% satisfecho con el trabajo.</p>
+                </div>
+            </section>
+
+            <!-- Sección 6 -->
+            <section class="policy-card">
+                <i data-lucide="pencil-ruler"></i>
+                <div class="card-info">
+                    <h2>Presupuestos</h2>
+                    <p>Se basan en fotos. El precio final puede variar si surgen imprevistos durante la reparación.</p>
+                </div>
+            </section>
+
+            <!-- Sección 7 y 8 (La más importante visualmente) -->
+            <section class="policy-card highlight-card">
+                <i data-lucide="camera"></i>
+                <div class="card-info">
+                    <h2>Fotos del Proyecto</h2>
+                    <p>Usamos fotos de 'Antes y Después'. Si no quieres que aparezcan en nuestra galería, solicita eliminar aquí:</p>
+                </div>
+            </section>
+                    <a href="sms:+16786987649" class="btn-sms-modern">Enviar SMS al +1 (678) 698-7649</a>
+        </div>
     </div>
-</div>  
+</div>
+
+<!-- Script para los iconos (ponlo al final de tu body) -->
+<script src="https://unpkg.com"></script>
+<script>lucide.createIcons();</script>
 
 
 
