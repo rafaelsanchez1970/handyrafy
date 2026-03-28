@@ -19,6 +19,7 @@ html {
     --black: #000000;
     --white: #ffffff;
     --footer-back-ground: #1f2937;
+    --shadow: rgba(0,0,0,0.2);
 }
 
 body {
@@ -34,10 +35,6 @@ h1 { text-align: center; font-size: clamp(3rem, 4vw, 4rem); font-weight: 600; ma
 h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: 800; margin-bottom: 4rem; }
 h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: var(--dark-blue); margin-bottom: 4rem; }
 
-
-
-
-
 /* 1. begin the Header Layout */
 .main-header {
     display: flex;
@@ -46,8 +43,12 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     padding: 1rem 2rem;
     background-color: #ffffff; /* Adjust as needed */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle separation */
-}
 
+    /* --- ESTO HACE que el menu de navegacion siempre este visible--- */
+    position: sticky;       /* Se queda fijo al hacer scroll */
+    top: 0;                /* Se pega al borde superior */
+    z-index: 1000;         /* Asegura que pase POR ENCIMA de las fotos y cards */
+}
 
 /* 2. Branding (Logo & Title) */
 .header-brand {
@@ -70,7 +71,6 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     font-size: 1rem;         /* Aumenté el tamaño de la letra */
     color: var(--dark-blue);
     line-height: 1;
-    
 }
 
 .brand-name-primary {
@@ -109,25 +109,117 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     text-transform: uppercase; /* Para que resalte más */
     padding: 8px 15px;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .nav-cta:hover {
     background-color: var(--yellow);
     color: var(--white) !important;
-    text-decorat1ion: none;
+    text-decoration: none;
 }
+
+/* --- Modal Styles (Reusable) --- */
+.modal-overlay {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.85); 
+    z-index: 3000; 
+    overflow-y: auto; 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #fff; 
+    margin: 5% auto; 
+    padding: 35px; 
+    width: 90%; 
+    max-width: 650px; 
+    border-radius: 15px; 
+    position: relative; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+    font-family: sans-serif;
+    color: #444;
+}
+
+.modal-close {
+    position: absolute; 
+    top: 15px; 
+    right: 25px; 
+    font-size: 35px; 
+    cursor: pointer; 
+    color: #888;
+}
+
+/* --- Payment & FAQ Specific Styles --- */
+.modal-header {
+    color: var(--dark-blue); 
+    margin-bottom: 10px; 
+    border-bottom: 2px solid #eee; 
+    padding-bottom: 10px;
+}
+
+.payment-box {
+    background: var(--light-blue);
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 25px; 
+    text-align: center; 
+    border: 1px solid #eee;
+}
+
+.payment-icons {
+    font-size: 2rem; 
+    margin: 15px 0;
+}
+
+.faq-item {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.faq-question {
+    color: var(--dark-blue); 
+    margin: 0 0 5px 0;
+    font-size: 1.6rem;
+}
+
+.faq-answer {
+    margin: 0; 
+    line-height: 1.5;
+}
+
+.modal-footer-note {
+    margin-top: 20px; 
+    font-size: 0.85rem; 
+    color: #888; 
+    border-top: 1px solid #eee; 
+    padding-top: 15px;
+}
+
+.btn-close-modal {
+    background: var(--dark-blue); 
+    color: #fff; 
+    border: none; 
+    padding: 12px 40px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.btn-close-modal:hover {
+    background: #d32f2f;
+}
+
+
 /*termina el header*/
-
-
-
-
-
-
-
-
 /* --- Begin SECCIÓN HERO --- */
-.hero {
+.hero, .hero-section {
     display: flex;
     flex-wrap: wrap; /* Para que en celular se pongan uno sobre otro */
     align-items: center;
@@ -189,7 +281,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px var(--shadow);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -197,7 +289,6 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     transform: translateY(-3px); /* Efecto de levante */
     background-color: #f1b400; /* Un amarillo un poco más oscuro al pasar el mouse */
 }
-.hero-section { display: flex; flex-wrap: wrap; background: var(--light-blue); padding: 0; }
 .hero-tagline { font-weight: 600; color: #666; font-size: 1.4rem; }
 /* --- FIN SECCIÓN HERO --- */
 
@@ -221,7 +312,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     background: var(--yellow); 
     padding: 1.5rem 2rem;
     border-radius: 18px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 15px var(--shadow); 
     text-decoration: none; 
     color: var(--black);
     font-weight: 700;
@@ -243,7 +334,7 @@ section {
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px var(--black);
+    box-shadow: 0 10px 30px var(--shadow);
     border-top: 6px solid var(--dark-blue); /* LÍNEA AZUL SUPERIOR */
     display: flex;
     flex-direction: column;
@@ -309,7 +400,7 @@ section {
 }
 
 .highlight-red {
-    color: var(--black); /* Un rojo profesional para la palabra Note */
+    color: var(--black); /* Un negro profesional para la palabra Note */
     font-weight: 800;
 }
 
@@ -342,7 +433,7 @@ section {
     margin: 20px auto;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 10px 30px var(--black);
+    box-shadow: 0 10px 30px var(--shadow);
     background-color: var(--light-blue); /* Fondo oscuro para resaltar las imágenes */
 }
 
@@ -473,7 +564,6 @@ section {
     text-transform: uppercase;
     pointer-events: none; /* Para que no interfiera si alguien hace clic en la foto */
     z-index: 10;         /* Asegura que esté por encima de la imagen */
-
 }
 
 /* Flechas del Slider */
@@ -585,7 +675,7 @@ section {
     position: relative;
     max-height: 85vh; /* Evita que se salga de la pantalla en móvil */
     overflow-y: auto; /* Permite scroll si el texto es largo */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px var(--shadow);
 }
 
 .modal-close-x {
@@ -670,6 +760,9 @@ section {
 
 /* Ajuste Celular */
 @media (max-width: 768px) {
+    
+ /*   body { background-color: lightgreen; }*/
+    
     .main-footer {
         background: var(--footer-back-ground);
         color: #ffffff;
@@ -678,7 +771,7 @@ section {
     }
     /* 1. Ajustes Globales de Pantalla */
     body, html {
-        overflow-x: hidden;
+        overflow-x: visible;/* Evita que aparezca la barra de desplazamiento horizontal  era hidden*/
         width: 100%;
     }
     section { 
@@ -691,11 +784,12 @@ section {
         flex-direction: column; 
         min-height: auto;
         width: 100% !important;
+        padding-top: 0 !important;
     }
     .hero-img, .hero-content { 
         width: 100% !important;
         flex: 0 0 100%;
-        padding: 3rem 10px; 
+        padding: 1rem 10px; 
         text-align: center;
     }
     .hero-img { height: 300px; }
@@ -803,9 +897,30 @@ section {
         margin-top: 3rem;
         padding-top: 2rem;
     }
-.emoji-color {
-  color: transparent;           /* Hace el emoji original invisible */
-  text-shadow: 0 0 0 var(--green);     /* Crea una silueta blanca en su lugar */
+
+    .emoji-color {
+    color: transparent;           /* Hace el emoji original invisible */
+    text-shadow: 0 0 0 var(--green);     /* Crea un emoji verde en su lugar */
+    }
 }
 
+
+/* --- AJUSTES PARA MÓVILES PEQUEÑOS --- */
+@media (max-width: 600px) {
+   
+    /* En teléfonos pequeños, las columnas ocupan el 100% (una sobre otra) */
+    .hero-img, 
+    .hero-content, 
+    .slider-slide {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+
+    .hero-content {
+        padding: 2rem; /* Menos espacio interno para que el texto respire */
+    }
+
+    .hero-title {
+        text-align: center; /* Se ve más profesional centrado en móviles */
+    }
 }

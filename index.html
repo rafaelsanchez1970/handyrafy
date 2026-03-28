@@ -50,24 +50,19 @@
 </head>
 <body>
 
+    <!--Existen smartphones Android ultra-pequeños con pantallas de apenas 2.5 , 3.0 , 5.5 6.9 y 8.0 pulgadas.-->
+
 <header class="main-header">
-    <div class="header-brand">
-      <img src="img/logo.webp" alt="Handy Rafy Logo" class="brand-logo">
-      <div class="brand-text">
-        <span class="brand-name-primary">Handy</span> Rafy 
-        <span class="brand-suffix">LLC</span>
-      </div>
-    </div>
-    
+  
+
     <nav class="header-nav">
         <a href="#services" class="nav-item">Services</a>
         <a href="#gallery" class="nav-item">Gallery</a>
-    <!--<a href="javascript:void(0)" onclick="openWho()" class="nav-item nav-cta">Who We Are</a> -->
-        
-    <!--   <a href="#who" class="nav-item nav-cta">Who We Are</a> -->
+        <!-- Unified Link -->
+        <a href="#paymentFaqModal" onclick="openPaymentFaq(); return false;" class="nav-item">Payments & FAQ</a>
         <a href="#whoWeAreModal" onclick="openWho(); return false;" class="nav-item nav-cta">Who We Are</a>
-
     </nav>
+
 </header>
 
 <section class="hero">
@@ -148,7 +143,7 @@
 <section class="legal-notice">
     <div id="text-rafy" class="legal-container">
         <h4 class="legal-text">
-            <span class="highlight-red">Note:</span> Handy Rafy LLC is a professional handyman service. We are not licensed plumbers or electricians. Our services are limited to minor repairs, maintenance, and "remove-and-replace" tasks. In compliance with Georgia law, we do not perform new installations or projects exceeding $2,500.
+            <span class="highlight-black">Note:</span> Handy Rafy LLC is a professional handyman service. We are not licensed plumbers or electricians. Our services are limited to minor repairs, maintenance, and "remove-and-replace" tasks. In compliance with Georgia law, we do not perform new installations or projects exceeding $2,500.
         </h4>
         <h3 class="legal-ask">Not sure if we’re the right fit? Just ask Rafy!</h3>
         <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="cta-box">
@@ -156,7 +151,11 @@
         </a>
     </div>
 </section>
-        
+
+
+
+
+
 <section id="gallery">
     <h2>Recent Projects</h2>
     <div class="slider-container">
@@ -282,6 +281,43 @@
         <p class="footer-version">Version: 1.0</p>
     </div>
 </footer>
+
+<!-- Combined Payments & FAQ Modal -->
+<div id="paymentFaqModal" class="modal-overlay">
+    <div class="modal-content">
+        
+        <span onclick="closePaymentFaq()" class="modal-close">&times;</span>
+        
+        <h2 class="modal-header">Payment & Service FAQ</h2>
+        <p>Everything you need to know about booking and paying for your project.</p>
+
+        <!-- Payment Methods -->
+        <div class="payment-box">
+            <h3>Accepted Payment Methods</h3>
+            <div class="payment-icons">💳 📱 🏦</div>
+            <p><strong>Credit/Debit Cards</strong> (Visa, MC, Amex), <strong>Apple Pay, Google Pay, PayPal</strong>, and <strong>Zelle</strong>.</p>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="faq-item">
+            <h4 class="faq-question">📅 When do I pay?</h4>
+            <p class="faq-answer">For small repairs, payment is due upon completion. For larger projects, a <strong>30% deposit</strong> is required to secure your date.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-question">🛠️ Are materials included?</h4>
+            <p class="faq-answer">Quotes cover <strong>labor only</strong>. We can provide materials (reimbursed with receipts) or you can have them ready on-site.</p>
+        </div>
+
+        <div class="modal-footer-note">
+            <p><em>*Note: For the security of our technicians, we prefer electronic payments over cash. Secure processing via Stripe.</em></p>
+        </div>
+
+        <div style="text-align:center;">
+            <button onclick="closePaymentFaq()" class="btn-close-modal">Close</button>
+        </div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
