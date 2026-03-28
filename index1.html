@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título más corto (esto ayuda a que aparezca la descripción) -->
+    <title>Handy Rafy LLC | Handyman Marietta</title>
+    
+    <!-- Una sola descripción estándar -->
+    <meta name="description" content="From leaky faucets to furniture assembly, we handle all your home repairs in Marietta, GA. Reliable and affordable service.">
+
+    <!-- Etiquetas Open Graph (iMessage lee estas) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Handy Rafy LLC | Handyman Services">
+    <meta property="og:description" content="Reliable home repairs in Marietta, GA. From leaky faucets to furniture assembly. Free quotes!">
+    <meta property="og:image" content="https://rafaelsanchez1970.github.io/handyrafy/img/home-banner.png">
+    <meta property="og:image:secure_url" content="https://rafaelsanchez1970.github.io/handyrafy/img/home-banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<!-- El toque final para Google: Datos Estructurados (Schema) llenar datos cuando ya tengas el hosting-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Handy Rafy LLC",
+  "priceRange": "$$", 
+  "address": {
+    "streetAddress": "123 Main St Suite 100", 
+    "@type": "PostalAddress",
+    "addressLocality": "Marietta",
+    "addressRegion": "GA",
+    "postalCode": "30060", 
+    "addressCountry": "US"
+  },
+  "url": "https://tu-sitio-web.com",
+  "telephone": "+16786987649",
+  "description": "Professional handyman service in Marietta, GA. Specializing in home repairs, painting, and minor renovations under $2,500.",
+  "areaServed": "Marietta, GA",
+  "image": "img/logo.jpeg"
+}
+</script>
+
+</head>
+<body>
+
+    <!--Existen smartphones Android ultra-pequeños con pantallas de apenas 2.5 , 3.0 , 5.5 6.9 y 8.0 pulgadas.-->
+
+<header class="main-header">
+  
+
+    <nav class="header-nav">
+        <a href="#services" class="nav-item">Services</a>
+        <a href="#gallery" class="nav-item">Gallery</a>
+        <!-- Unified Link -->
+        <a href="#paymentFaqModal" onclick="openPaymentFaq(); return false;" class="nav-item">Payments & FAQ</a>
+        <a href="#whoWeAreModal" onclick="openWho(); return false;" class="nav-item nav-cta">Who We Are</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+    <!-- Imagen del Banner -->
+    <img src="img/home-banner.webp" class="hero-img" alt="Professional Handyman Marietta">
+    
+    <!-- Contenido del Banner -->
+    <div class="hero-content">
+        <p class="hero-badge">⭐ 5-Star Local Service • Fully Insured</p>
+        <h1 class="hero-title">Trusted Handyman Services <br> in Marietta, GA</h1>
+        
+        <ul class="hero-list">
+            <li>Do it Right the First Time</li>
+        </ul>
+        <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="hero-cta">
+            Text a photo of your project for a Free Quote
+        </a>
+    </div>
+</section>
+
+    <!-- .card ul, .why-list ul, .hero-content ul  no entiendo esta linea del css-->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="grid-3">
+        <!-- Tarjeta 1 -->
+        <div class="card">
+            <h3 id="electric" class="card-title">Electrical Maintenance & Minor Repairs</h3>
+            <ul>
+                <li><span class="highlight">Installation:</span> Replacing old ceiling lights with new models.</li>
+                <li><span class="highlight">Ceiling Fan Installation:</span> Swapping out existing fans or installing new ones.</li>
+                <li><span class="highlight">Outlet & Switch Replacement:</span> Upgrading old outlets or replacing faulty switches.</li>
+                <li><span class="highlight">GFCI Outlet replacement:</span> Enhancing safety in kitchens and bathrooms.</li>
+                <li><span class="highlight">Dimmer Switch Upgrades:</span> Installing dimmer switches for better ambiance.</li>
+                <li><span class="highlight">Smoke & Carbon Monoxide Detectors:</span> Battery replacement or new unit setup.</li>
+            </ul>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card">
+            <h3 id="low-voltage" class="card-title">Low-Voltage & Smart Home Services</h3>
+            <ul>
+                <li><span class="highlight">Doorbell Installation:</span> Setting up Ring, Nest, or video doorbells.</li>
+                <li><span class="highlight">Security Camera Setup:</span> Installing outdoor/indoor security cameras.</li>
+                <li><span class="highlight">Smart Home Integration:</span> Setting up smart bulbs, plugs, and hubs.</li>
+                <li><span class="highlight">TV Wall Mounting:</span> Mounting TVs with cable management.</li>
+                <li><span class="highlight">Landscape Lighting:</span> Installing low-voltage garden lights.</li>
+            </ul>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card">
+            <h3 id="plumbing" class="card-title">Plumbing Services</h3>
+            <ul>
+                <li><span class="highlight">Faucet Repair & Replacement:</span> Installing new faucets and fixing leaks.</li>
+                <li><span class="highlight">Toilet Repair & Installation:</span> Replacing rings, valves, or complete units.</li>
+                <li><span class="highlight">Showerhead & Trim:</span> Swapping out old fixtures for new ones.</li>
+                <li><span class="highlight">Minor Clog Removal:</span> Unclogging sinks, toilets, and tubs.</li>
+                <li><span class="highlight">Garbage Disposal:</span> Replacing units in the same location.</li>
+                <li><span class="highlight">Leak Repair:</span> Fixing minor leaks in supply lines.</li>
+            </ul>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card">
+            <h3 id="general" class="card-title">General Home Repairs & Maintenance</h3>
+            <ul>
+                <li><span class="highlight">Drywall Repair:</span> Patching holes and texture matching.</li>
+                <li><span class="highlight">Door & Window:</span> Locks, deadbolts, and screen repairs.</li>
+                <li><span class="highlight">Mounting:</span> Heavy mirrors, artwork, and shelving.</li>
+                <li><span class="highlight">Furniture Assembly:</span> IKEA, Wayfair, and office furniture.</li>
+                <li><span class="highlight">Carpentry:</span> Baseboards, crown molding, and trim.</li>
+                <li><span class="highlight">Exterior:</span> Pressure washing and gutter cleaning.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="legal-notice">
+    <div id="text-rafy" class="legal-container">
+        <h4 class="legal-text">
+            <span class="highlight-black">Note:</span> Handy Rafy LLC is a professional handyman service. We are not licensed plumbers or electricians. Our services are limited to minor repairs, maintenance, and "remove-and-replace" tasks. In compliance with Georgia law, we do not perform new installations or projects exceeding $2,500.
+        </h4>
+        <h3 class="legal-ask">Not sure if we’re the right fit? Just ask Rafy!</h3>
+        <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="cta-box">
+            Text a photo and description of your project to Rafy and he'll let you know!
+        </a>
+    </div>
+</section>
+
+
+
+
+
+<section id="gallery">
+    <h2>Recent Projects</h2>
+    <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+            <!-- Slide 1 -->
+            <div class="slider-slide">
+                <img src="img/Hardwoodfloor-Before.webp" alt="Before">
+                <div class="ba-label">Hardwood Floor Before Repair</div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slider-slide">
+                <img src="img/Hardwoodfloor-After.webp" alt="After">
+                <div class="ba-label">Hardwood Floor After Repair</div>
+            </div>
+           
+
+            <div class="slider-slide">
+                    <img src="img/Chandelier-Before.webp" alt="Chandelier-Before-Repair">
+                    <div class="ba-label">Chandelier Before Repair</div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slider-slide">
+                    <img src="img/Chandelier-After.webp" alt="Chandelier-After-Repair">
+                    <div class="ba-label">Chandelier After Repair</div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="slider-slide">
+                    <img src="img/Fireplace-Before.webp" alt="Fireplace-Before-Repair">
+                    <div class="ba-label">Fireplace Before` Repair</div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="slider-slide">
+                    <img src="img/Fireplace-after.webp" alt="Fireplace-after-Repair">
+                    <div class="ba-label">Fireplace After Repair</div>
+                </div>
+                
+                <!-- Slide 7 -->
+                <div class="slider-slide">
+                    <img src="img/Project7.jpg" alt="Work 7 working on it">
+                    <div class="ba-label">Before</div>
+                </div>
+                <!-- Slide 8 -->
+                <div class="slider-slide">
+                    <img src="img/Project8.jpg" alt="Work 8 working on it">
+                    <div class="ba-label">After</div>
+                </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <button class="next" onclick="moveSlide(1)">❯</button>
+    </div>
+</section>
+
+<!-- Modal "Who We Are" Limpio -->
+<div id="whoWeAreModal" class="modal-overlay">
+    <div class="modal-window">
+        <button class="modal-close-x" onclick="closeWho()">&times;</button>
+        <h3 class="modal-title">Who We Are</h3>
+        <p class="modal-description">
+            Welcome to <strong>Handy Rafy LLC</strong>, your reliable partner for home maintenance and repairs in Marietta and the surrounding areas. We pride ourselves on providing high-quality, professional handyman services for those smaller projects that keep your home running smoothly.
+        </p>
+        
+        <div class="modal-signature">
+            <p>Sincerely,</p>
+            <div class="sig-details">
+                <span class="sig-name">Rafael J. Sanchez</span>
+                <span class="sig-info">Owner & Lead Specialist</span>
+                <span class="sig-info">Cell: (678) 698-7649</span>
+                <span class="sig-info">
+                    Email: <a href="mailto:HandyRafyMarietta@gmail.com" class="modal-link">HandyRafyMarietta@gmail.com</a>
+                </span>
+            </div>
+        </div>
+        <div class="modal-legal-box">
+            <p><strong>Disclaimer & Licensing Information:</strong> In compliance with Georgia State Regulations, please be advised that Handy Rafy LLC is a professional handyman service provider and is not a state-licensed residential or general contractor.</p>
+            <p>We specialize in repair, maintenance, and improvement projects where the total value of labor and materials is under $2,500.</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeWho()">Close</button>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="footer-grid">
+        <!-- Columna 1: Logo & Bio -->
+        <div class="footer-col">
+            <h3 class="footer-logo">Handy Rafy <span class="footer-suffix">LLC</span></h3>
+            <p class="footer-owner">Owned & Operated by Rafael J. Sanchez</p>
+            <p class="footer-bio">
+                Your local expert for home maintenance and repairs in Marietta, GA. Quality craftsmanship and professional service on every project.
+            </p>
+            <div class="footer-badge">
+                <span>✅ FULLY INSURED</span>
+            </div>
+        </div>
+
+        <!-- Columna 2: Quick Links -->
+        <div class="footer-col">
+            <h4 class="footer-title">Our Services</h4>
+            <ul class="footer-list">
+                <li><a href="#electric">• Electric Maintenance & Minor Electrical Jobs</a></li>
+                <li><a href="#low-voltage">• Low-Voltage and smart home services</a></li>
+                <li><a href="#plumbing">• Plumbing Services</a></li>
+                <li><a href="#general">• General Repairs</a></li>
+                <li><a href="#services">• future add</a></li>
+                <li><a href="#text-rafy">• Not sure? Just ask Rafy!</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna 3: Contact Info -->
+        <div class="footer-col">
+            <h4 class="footer-title">Contact Us</h4>
+            <div class="footer-contact">
+                <p><span>📍</span> Marietta, GA and surrounding areas</p>
+                <p><span class="emoji-color">📞</span> <a href="tel:6786987649">(678) 698-7649</a></p>
+                <p><span>📧</span> <a href="mailto:HandyRafyMarietta@gmail.com">HandyRafyMarietta@gmail.com</a></p>
+                <div class="footer-links">
+                    <!-- Estos activan las funciones en tu script.js -->
+                    <a href="#" id="privacyBtn">Privacy Policy</a>
+                </div>
+                     <p class="copyright">&copy; 2024 Handy Rafy LLC. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Barra de Copyright -->
+    <div class="footer-bottom">
+        <p>Cobb County Business License: L1234567890</p>
+        <p>&copy; 2026 <strong>Handy Rafy LLC</strong>. Owned and operated by <strong>Rafael J. Sanchez</strong>.</p>
+        <p class="footer-version">Version: 1.0</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</footer>
+
+<!-- Combined Payments & FAQ Modal -->
+<div id="paymentFaqModal" class="modal-overlay">
+    <div class="modal-content">
+        
+        <span onclick="closePaymentFaq()" class="modal-close">&times;</span>
+        
+        <h2 class="modal-header">Payment & Service FAQ</h2>
+        <p>Everything you need to know about booking and paying for your project.</p>
+
+        <!-- Payment Methods -->
+        <div class="payment-box">
+            <h3>Accepted Payment Methods</h3>
+            <div class="payment-icons">💸 💳 📱 🏦</div>
+            <p><strong>Cash, </strong><strong>Credit/Debit Cards</strong> (Visa, MC, Amex), <strong>Apple Pay</strong>, and <strong>Zelle</strong>.</p>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="faq-item">
+            <h4 class="faq-question">📅 When do I pay?</h4>
+            <p class="faq-answer">For small repairs, payment is due upon completion. For "Multi-day" or "Scheduled" projects, a <strong>30% deposit</strong> is required to secure your date.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-question">🛠️ Are materials included?</h4>
+            <p class="faq-answer">Quotes cover <strong>labor only</strong>. We can provide materials (reimbursed with receipts) or you can have them ready on-site.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-question">🛡️ Do you provide a service warranty?</h4>
+            <p class="faq-answer"> <strong>labor only</strong>. We offer a 100% guarantee on our labor. Materials and supplies are not covered under our warranty but may be covered by the manufacturer.</p>
+        </div>
+
+        <div class="modal-footer-note">
+            <p><em>working on it</em></p>
+        </div>
+
+        <div style="text-align:center;">
+            <button onclick="closePaymentFaq()" class="btn-close-modal">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
