@@ -43,3 +43,22 @@ window.onclick = function(event) {
     }
 }
 
+function openPaymentFaq() {
+    document.getElementById("paymentFaqModal").style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevents background scroll
+}
+
+function closePaymentFaq() {
+    document.getElementById("paymentFaqModal").style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enables background scroll
+}
+
+// Close modal if user clicks outside of the box
+window.onclick = function(event) {
+    let modal = document.getElementById("paymentFaqModal");
+    if (event.target == modal) {
+        closePaymentFaq();
+    }
+}
+
+
