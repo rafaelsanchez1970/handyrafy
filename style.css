@@ -41,7 +41,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #ffffff; /* Adjust as needed */
+    background-color: var(--white); /* Adjust as needed */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle separation */
 
     /* --- ESTO HACE que el menu de navegacion siempre este visible--- */
@@ -133,7 +133,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 }
 
 .modal-content {
-    background: #fff; 
+    background: var(--white); 
     margin: 5% auto; 
     padding: 35px; 
     width: 90%; 
@@ -192,17 +192,10 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     line-height: 1.5;
 }
 
-.modal-footer-note {
-    margin-top: 20px; 
-    font-size: 0.85rem; 
-    color: #888; 
-    border-top: 1px solid #eee; 
-    padding-top: 15px;
-}
 
 .btn-close-modal {
     background: var(--dark-blue); 
-    color: #fff; 
+    color: var(--white); 
     border: none; 
     padding: 12px 40px; 
     border-radius: 5px; 
@@ -247,7 +240,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 
 .hero-badge {
     font-weight: 600;
-    color: #666;
+    color: var(--text-color);
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
 }
@@ -287,7 +280,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 
 .hero-cta:hover {
     transform: translateY(-3px); /* Efecto de levante */
-    background-color: #f1b400; /* Un amarillo un poco más oscuro al pasar el mouse */
+    background-color: var(--yellow-hover); /* Un amarillo un poco más oscuro al pasar el mouse */
 }
 .hero-tagline { font-weight: 600; color: #666; font-size: 1.4rem; }
 /* --- FIN SECCIÓN HERO --- */
@@ -376,7 +369,7 @@ section {
 
 /* --- SECCIÓN NOTA LEGAL Y CONTACTO --- */
 .legal-notice {
-    background-color: #ffffff;
+    background-color: var(--white);
     padding: 6rem 5%; /* Espacio equilibrado */
     border-bottom: 1px solid #f0f0f0;
     text-align: center;
@@ -736,7 +729,7 @@ section {
 
 .modal-legal-box p {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-color);
     margin-bottom: 1rem;
     line-height: 1.4;
 }
@@ -746,7 +739,7 @@ section {
     margin: 2rem auto 0;
     padding: 1rem 2.5rem;
     background: var(--dark-blue);
-    color: white;
+    color: var(--white);
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -754,8 +747,116 @@ section {
     transition: background 0.3s;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --bg-color: #f2f2f2;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-sub: #666666;
+    --accent-blue: #4a86e8;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.service-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service-header h1 {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.sub-nav {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.sub-nav a {
+    color: #000;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.term-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.term-card .icon {
+    width: 32px;
+    height: 32px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.term-card h2 {
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    color: #222;
+}
+
+.term-card p {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.sms-btn {
+    display: block;
+    background-color: var(--accent-blue);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
 .modal-close-btn:hover {
-    background: #142a63;
+    background: var(--dark-blue);
 }
 
 /* Ajuste Celular */
@@ -763,12 +864,8 @@ section {
     
  /*   body { background-color: lightgreen; }*/
     
-    .main-footer {
-        background: var(--footer-back-ground);
-        color: #ffffff;
-        padding: 6rem 5% 2rem;
-        font-family: 'Segoe UI', Roboto, sans-serif;
-    }
+    
+    
     /* 1. Ajustes Globales de Pantalla */
     body, html {
         overflow-x: visible;/* Evita que aparezca la barra de desplazamiento horizontal  era hidden*/
@@ -825,87 +922,117 @@ section {
         height: 50vh;   /* Un poco más bajo en móviles para que no tape todo */
     }
 
-    .main-footer {
-        padding: 5rem 5% 2rem;
-        text-align: center;
-    }
-
+   
 /* IMPORTANTE: Si el contenedor padre (.footer-col) tiene 'align-items: center', 
    debes decirle que para los contactos use la izquierda: */
 
-    .footer-col {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Esto empuja todo el bloque a la izquierda */
-
-        margin-bottom: 3rem;
-    }
-    .footer-title {
-        border-left: none; /* Quitamos la línea lateral en móvil */
-    /*         border-bottom: 2px solid var(--yellow); /* Ponemos línea abajo */
-        display: inline-block;
-        padding: 0 10px 5px;
-        margin-bottom: 1.5rem;
-        font-size: 1.8rem;
-    }
-  
-    .footer-list {
-        display: inline-block; /* Truco para alinear viñetas */
-        text-align: left;      /* Viñetas en línea recta */
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
-    }
-
-    /* Esto quita el azul de los links del footer */
-    .footer-list a {
-        color: var(--light-blue) !important;         /* Color blanco */
-        transition: color 0.3s; /* Para que el cambio al pasar el mouse sea suave */
-        text-decoration: underline;
-    }
-
-    .footer-contact p {
-        color: var(--light-blue) !important;          /* ESTA LÍNEA cambia el texto a blanco */
-        justify-content: center; /* Mantiene el centrado en móvil */
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
-        display: flex;           /* Asegúrate de que tenga flex para que el centrado funcione */
-        align-items: center;     /* Alinea el icono con el texto verticalmente */
-        gap: 10px;               /* Espacio entre el icono y el texto */
-        text-align: center;
-    }
-
-    /* ESTO QUITA EL AZUL DEL TELÉFONO Y EMAIL DEFINITIVAMENTE */
-    .footer-contact a {
-        color: var(--light-blue) !important; 
-        text-decoration: none !important;    /* Quita el subrayado si no lo quieres */
-        font-weight: bold;
-    text-decoration: underline !important; /* Si quieres que el teléfono y email sigan subrayados */
-    }
-
-    /* OPCIONAL: Que cambie a amarillo cuando pases el mouse o lo toques */
-    .footer-contact a:hover {
-        color: var(--yellow) !important;
-    }
-
-/* IMPORTANTE: Si tienes enlaces (teléfono o email), también debes ponerlos blancos */
-    .footer-badge span {
-        display: inline-block;
-        margin-top: 10rem;
-    }
-    .footer-bottom {
-        margin-top: 3rem;
-        padding-top: 2rem;
-    }
+    
 
     .emoji-color {
     color: transparent;           /* Hace el emoji original invisible */
     text-shadow: 0 0 0 var(--green);     /* Crea un emoji verde en su lugar */
     }
+
+
+
+.footer-container {
+background: linear-gradient(180deg, #0a192f 0%, #050c16 100%);
+color: white;
+padding: 40px 20px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;
+}
+
+.footer-title {
+font-size: 1.8rem !important;
+letter-spacing: 1px;
+margin-bottom: 25px;
+}
+
+.card-group, .contact-section {
+max-width: 400px;
+margin: 0 auto;
+}
+
+/* Tarjetas de servicios y contacto */
+.info-card, .contact-card {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 15px;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+text-align: left;
+text-decoration: none;
+color: white;
+transition: transform 0.2s;
+}
+
+/* Efecto de brillo para el botón de llamada */
+.highlight-call {
+border: 1px solid rgba(76, 175, 80, 0.5);
+box-shadow: 0 0 15px rgba(76, 175, 80, 0.2);
+}
+
+.contact-title { font-size: 1.4rem; margin-top: 30px; margin-bottom: 5px; }
+.contact-subtitle { font-size: 0.8rem; opacity: 0.7; margin-bottom: 20px; }
+
+.text-group { display: flex; flex-direction: column; margin-left: 15px; }
+
+.footer-bottom {
+margin-top: 40px;
+font-size: 0.75rem;
+opacity: 0.6;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+padding-top: 20px;
+}
+
+.privacy-link { color: #aab8c2; text-decoration: underline; display: block; margin-bottom: 15px; }
+.license { font-weight: bold; margin-bottom: 10px; }
+
+
+
+
+
+
+
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- AJUSTES PARA MÓVILES PEQUEÑOS --- */
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 600px) {
    
     /* En teléfonos pequeños, las columnas ocupan el 100% (una sobre otra) */
@@ -923,4 +1050,190 @@ section {
     .hero-title {
         text-align: center; /* Se ve más profesional centrado en móviles */
     }
+}
+
+/* --- Testimonials Modal Specific Styles --- */
+
+/* Reutilizamos tus clases existentes .modal-overlay y .modal-content */
+/* Solo añadimos estilos específicos para el contenido de testimonios */
+
+.testimonials-list {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.testimonial-card {
+    background: var(--light-blue);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--dark-blue);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-card span {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    display: block;
+}
+
+/* BOTÓN DE GOOGLE - Estilo Profesional */
+.google-reviews-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 1.2rem;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    transition: background 0.3s ease;
+}
+
+.google-reviews-link:hover {
+    background-color: #f8f9fa;
+    border-color: #c6c6c6;
+}
+
+.google-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Ajuste para el botón de cerrar (reutilizando tu estilo .btn-close-modal) */
+.btn-close-testimonials {
+    width: 100%;
+    margin-top: 1rem;
+}
+.info-card {
+    display: flex;       /* Alinea icono y texto en la misma línea */
+    align-items: center; /* Centra verticalmente el contenido */
+    gap: 10px;           /* Crea espacio entre el icono y el texto */
+}
+
+.card-icon {
+    /* Correct syntax: property: value(n) value(n); */
+    filter: brightness(0) invert(1);
+    width: 20px; 
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px; /* Espacio entre el icono y el texto */
+    margin-right: 20px; /* Espacio entre el icono y el texto */
+}
+.info-card ul {
+    list-style: none; /* Quita los puntos por defecto */
+    padding: 0;
+}
+
+.info-card li {
+    display: flex;         /* Alinea icono y texto en línea */
+    align-items: center;   /* Centra verticalmente el icono con el texto */
+    margin-bottom: 10px;   /* Espacio entre cada línea */
+}
+
+.list-icon {
+    width: 20px;           /* Ajusta el tamaño de tu icono */
+    height: auto;
+    margin-right: 12px;    /* Espacio entre el icono y el texto */
+    
+}
+/* Contenedor del Modal */
+.modal-content {
+    background-color: #f2f2f2 !important; /* Fondo gris claro como la imagen */
+    padding: 0 !important;
+    border-radius: 20px;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.modal-header-modern {
+    background: white;
+    padding: 20px 15px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header-modern h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.modal-nav-mini {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.close-text { cursor: pointer; text-decoration: underline; }
+
+/* Estilo de Tarjetas */
+.cards-wrapper {
+    padding: 15px;
+}
+
+.policy-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.policy-card i {
+    width: 28px;
+    color: #444;
+    flex-shrink: 0;
+}
+
+.card-info h2 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    text-align: justify;
+    text-justify: inter-word; /* Mejora el espacio entre palabras */
+    hyphens: auto;           /* Corta palabras largas con guión para evitar "ríos" */
+    -webkit-hyphens: auto;  
+
+    
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Botón SMS */
+.btn-sms-modern {
+    display: block;
+    background: var(--green);
+    color: white !important;
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 14px;
 }
