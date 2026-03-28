@@ -70,7 +70,12 @@
     
     <!-- Contenido del Banner -->
     <div class="hero-content">
-        <p class="hero-badge">⭐ 5-Star Local Service • Fully Insured</p>
+
+        <!-- En tu sección HERO, busca esta línea y cámbiala por esta: -->
+        <p class="hero-badge" onclick="openTestimonials();" style="cursor: pointer;">
+            ⭐ <u>5-Star Local Service</u> • Fully Insured
+        </p>
+
         <h1 class="hero-title">Trusted Handyman Services <br> in Marietta, GA</h1>
         
         <ul class="hero-list">
@@ -134,26 +139,12 @@
                 <li><span class="highlight">Furniture Assembly:</span> IKEA, Wayfair, and office furniture.</li>
                 <li><span class="highlight">Carpentry:</span> Baseboards, crown molding, and trim.</li>
                 <li><span class="highlight">Exterior:</span> Pressure washing and gutter cleaning.</li>
+                <li><span class="highlight">Exterior:</span> Deck repair.</li>
+            
             </ul>
         </div>
     </div>
 </section>
-
-<section class="legal-notice">
-    <div id="text-rafy" class="legal-container">
-        <h4 class="legal-text">
-            <span class="highlight-black">Note:</span> Handy Rafy LLC is a professional handyman service. We are not licensed plumbers or electricians. Our services are limited to minor repairs, maintenance, and "remove-and-replace" tasks. In compliance with Georgia law, we do not perform new installations or projects exceeding $2,500.
-        </h4>
-        <h3 class="legal-ask">Not sure if we’re the right fit? Just ask Rafy!</h3>
-        <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="cta-box">
-            Text a photo and description of your project to Rafy and he'll let you know!
-        </a>
-    </div>
-</section>
-
-
-
-
 
 <section id="gallery">
     <h2>Recent Projects</h2>
@@ -169,38 +160,38 @@
                 <img src="img/Hardwoodfloor-After.webp" alt="After">
                 <div class="ba-label">Hardwood Floor After Repair</div>
             </div>
-           
 
+            <!-- Slide 3 -->
             <div class="slider-slide">
-                    <img src="img/Chandelier-Before.webp" alt="Chandelier-Before-Repair">
-                    <div class="ba-label">Chandelier Before Repair</div>
-                </div>
-                <!-- Slide 4 -->
-                <div class="slider-slide">
-                    <img src="img/Chandelier-After.webp" alt="Chandelier-After-Repair">
-                    <div class="ba-label">Chandelier After Repair</div>
-                </div>
-                <!-- Slide 5 -->
-                <div class="slider-slide">
-                    <img src="img/Fireplace-Before.webp" alt="Fireplace-Before-Repair">
-                    <div class="ba-label">Fireplace Before` Repair</div>
-                </div>
-                <!-- Slide 6 -->
-                <div class="slider-slide">
-                    <img src="img/Fireplace-after.webp" alt="Fireplace-after-Repair">
-                    <div class="ba-label">Fireplace After Repair</div>
-                </div>
-                
-                <!-- Slide 7 -->
-                <div class="slider-slide">
-                    <img src="img/Project7.jpg" alt="Work 7 working on it">
-                    <div class="ba-label">Before</div>
-                </div>
-                <!-- Slide 8 -->
-                <div class="slider-slide">
-                    <img src="img/Project8.jpg" alt="Work 8 working on it">
-                    <div class="ba-label">After</div>
-                </div>
+                <img src="img/Chandelier-Before.webp" alt="Chandelier-Before-Repair">
+                <div class="ba-label">Chandelier Before Repair</div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slider-slide">
+                <img src="img/Chandelier-After.webp" alt="Chandelier-After-Repair">
+                <div class="ba-label">Chandelier After Repair</div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slider-slide">
+                <img src="img/Fireplace-Before.webp" alt="Fireplace-Before-Repair">
+                <div class="ba-label">Fireplace Before` Repair</div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="slider-slide">
+                <img src="img/Fireplace-after.webp" alt="Fireplace-after-Repair">
+                <div class="ba-label">Fireplace After Repair</div>
+            </div>
+            
+            <!-- Slide 7 -->
+            <div class="slider-slide">
+                <img src="img/Project7.jpg" alt="Work 7 working on it">
+                <div class="ba-label">Before</div>
+            </div>
+            <!-- Slide 8 -->
+            <div class="slider-slide">
+                <img src="img/Project8.jpg" alt="Work 8 working on it">
+                <div class="ba-label">After</div>
+            </div>
         </div>
         <button class="prev" onclick="moveSlide(-1)">❮</button>
         <button class="next" onclick="moveSlide(1)">❯</button>
@@ -271,10 +262,12 @@
                 <p><span>📧</span> <a href="mailto:HandyRafyMarietta@gmail.com">HandyRafyMarietta@gmail.com</a></p>
                 <div class="footer-links">
                     <!-- Estos activan las funciones en tu script.js -->
-                    <a href="#" id="privacyBtn">Privacy Policy</a>
+                   <a href="#" onclick="openPrivacy(); return false;">Privacy Policy</a>
+                <!--        <a href="#" id="privacyBtn">Privacy Policy</a> -->
                 </div>
                      <p class="copyright">&copy; 2024 Handy Rafy LLC. All rights reserved.</p>
-        </div>
+
+                    </div>
     </div>
 
     <!-- Barra de Copyright -->
@@ -283,18 +276,6 @@
         <p>&copy; 2026 <strong>Handy Rafy LLC</strong>. Owned and operated by <strong>Rafael J. Sanchez</strong>.</p>
         <p class="footer-version">Version: 1.0</p>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 </footer>
 
 <!-- Combined Payments & FAQ Modal -->
@@ -338,6 +319,59 @@
         </div>
     </div>
 </div>
+
+<div id="testimonialModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-top" onclick="closeTestimonials()">&times;</span>
+        <h2>What Our Neighbors Say ⭐⭐⭐⭐⭐</h2>
+        
+        <div class="modal-body">
+            <div class="testi-item">
+                <p>"Rafy fixed my leaky faucet. Very professional and fair pricing."</p>
+                <span>- Sarah M., East Cobb</span>
+            </div>
+            <div class="testi-item">
+                <p>"Fast response via text. Assembled my furniture in no time."</p>
+                <span>- James D., Marietta</span>
+            </div>
+        </div>
+
+        <!-- BOTÓN DE GOOGLE -->
+        <a href="TU_LINK_DE_GOOGLE_AQUI" target="_blank" class="google-btn">
+            <img src="https://upload.wikimedia.org" alt="Google">
+            View all reviews on Google
+        </a>
+
+        <button class="close-bottom" onclick="closeTestimonials()">Close Window</button>
+    </div>
+</div>
+
+<!-- Added class "modal" to match your JS logic -->
+<div id="privacyModal" class="modal modal-overlay">
+    <div class="modal-content">
+        <span class="close" onclick="closePrivacy()">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. We only use your information to provide handyman services and quotes.</p>
+        <ul>
+            <li>We do not sell your data.</li>
+            <li>Photos sent are used only for quoting purposes.</li>
+            <li><strong>1. INTERNAL RECORDS:</strong> We collect your name, phone, and address to maintain a private customer history...</li>
+            <li><strong>2. DATA SAFETY:</strong> We NEVER sell your data to third parties.</li>
+            <li><strong>3. OPT-OUT:</strong> You can stop receiving SMS at any time by replying 'STOP'.</li>
+            <li><strong>4. SMS CONSENT:</strong> By texting us, you agree to receive a reply and service-related messages.</li>
+            <li><strong>5. SERVICE FOLLOW-UP:</strong> We may send a text a few days after completion to ensure you are 100% satisfied with the work.</li>
+            <li><strong>6. ESTIMATES:</strong> Estimates are based on initial photos. Final pricing may change if unforeseen issues are discovered during the repair.</li>
+            <li><strong>7. PROJECT PHOTOS:</strong> We take 'Before & After' photos of our work and may display them in our gallery to showcase our services.</li>
+            <li><strong>8. YOUR RIGHT TO REMOVE:</strong> If you do not want your project photos online, text us at +1 (678) 698-7649 and we will remove them immediately.</li>
+            <li><strong>9. SECURITY:</strong> We take reasonable steps to protect your data. However, no mobile transmission is 100% secure.</li>
+        </ul>
+    </div>
+</div>  
+
+
+
+
+
 
 <script src="script.js"></script>
 </body>
