@@ -20,6 +20,11 @@ html {
     --white: #ffffff;
     --footer-back-ground: #1f2937;
     --shadow: rgba(0,0,0,0.2);
+    /* ... tus otras variables ... */
+    --yellow: #ffc107;
+    --yellow-hover: #e5ac00; /* Añade esta línea (un amarillo más oscuro) */
+
+
 }
 
 body {
@@ -42,7 +47,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--white); /* Adjust as needed */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle separation */
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.05); /* Subtle separation */
 
     /* --- ESTO HACE que el menu de navegacion siempre este visible--- */
     position: sticky;       /* Se queda fijo al hacer scroll */
@@ -59,9 +64,9 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 
 .brand-logo {
     display: block;
-    height: 60px !important;    /* ANTES TENÍAS 0.1px, por eso no se veía */
+    height: 6rem !important;    /* ANTES TENÍAS 0.1px, por eso no se veía */
     width: auto;
-    max-width: 160px;
+    max-width: 16rem;
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -86,7 +91,7 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 /* 3. Navigation Links */
 .header-nav {
     display: flex;
-    gap: 15px;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -107,8 +112,8 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     color: var(--green) !important; /* CAMBIADO A NARANJA/AMARILLO */
     font-weight: 500 !important;
     text-transform: uppercase; /* Para que resalte más */
-    padding: 8px 15px;
-    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.8rem;
     font-size: 1.1rem;
 }
 
@@ -135,21 +140,21 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 .modal-content {
     background: var(--white); 
     margin: 5% auto; 
-    padding: 35px; 
+    padding: 3.5rem; 
     width: 90%; 
-    max-width: 650px; 
-    border-radius: 15px; 
+    max-width: 65rem; 
+    border-radius: 1.5rem; 
     position: relative; 
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); 
     font-family: sans-serif;
     color: #444;
 }
 
 .modal-close {
     position: absolute; 
-    top: 15px; 
-    right: 25px; 
-    font-size: 35px; 
+    top: 1.5rem; 
+    right: 2.5rem; 
+    font-size: 3.5rem; 
     cursor: pointer; 
     color: #888;
 }
@@ -157,33 +162,33 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 /* --- Payment & FAQ Specific Styles --- */
 .modal-header {
     color: var(--dark-blue); 
-    margin-bottom: 10px; 
-    border-bottom: 2px solid #eee; 
-    padding-bottom: 10px;
+    margin-bottom: 1rem; 
+    border-bottom: 0.2rem solid #eee; 
+    padding-bottom: 1rem;
 }
 
 .payment-box {
     background: var(--light-blue);
-    padding: 20px; 
-    border-radius: 10px; 
-    margin-bottom: 25px; 
+    padding: 2rem; 
+    border-radius: 1rem; 
+    margin-bottom: 2.5rem; 
     text-align: center; 
-    border: 1px solid #eee;
+    border: 0.1rem solid #eee;
 }
 
 .payment-icons {
     font-size: 2rem; 
-    margin: 15px 0;
+    margin: 1.5rem 0;
 }
 
 .faq-item {
-    margin-bottom: 18px;
+    margin-bottom: 1.8rem;
     text-align: left;
 }
 
 .faq-question {
     color: var(--dark-blue); 
-    margin: 0 0 5px 0;
+    margin: 0 0 0.5rem 0;
     font-size: 1.6rem;
 }
 
@@ -197,12 +202,12 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     background: var(--dark-blue); 
     color: var(--white); 
     border: none; 
-    padding: 12px 40px; 
-    border-radius: 5px; 
+    padding: 1.2rem 4rem; 
+    border-radius: 0.5rem; 
     cursor: pointer; 
     font-weight: bold; 
     font-size: 1rem;
-    margin-top: 10px;
+    margin-top: 1rem;   
 }
 
 .btn-close-modal:hover {
@@ -218,13 +223,13 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
     align-items: center;
     padding: 0;
     background-color: var(--light-blue);
-    min-height: 500px;
+    min-height: 50rem;
     width: 100%;
 }
 
 .hero-img {
     width: 50%;
-    height: 400px; /* Altura fija para que el banner se vea imponente */
+    height: 40rem; /* Altura fija para que el banner se vea imponente */
     object-fit: cover; /* Evita que la imagen se estire feo */
 }
 
@@ -265,22 +270,42 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 }
 
 /* Botón de Acción (CTA) */
+.cta-box,
 .hero-cta {
     display: inline-block;
     background-color: var(--yellow);
     color: var(--black);
     padding: 1.5rem 2.5rem;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     text-decoration: none;
     font-size: 1.8rem;
-    font-weight: 700;
-    box-shadow: 0 4px 15px var(--shadow);
+    font-weight: 500;
+    box-shadow: 0 4rem 1.5rem var(--shadow);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
+/* Si quieres un estilo diferente para el botón de text a photo and description of your project to rafy, puedes usar esta clase: */
+.cta-box-prueba { 
+    display: flex;
+    background: var(--yellow); 
+    color: var(--black);
+    padding: 1.5rem 2rem;
+    border-radius: 1.8rem; 
+    box-shadow: 0 4rem 1.5rem var(--shadow); 
+    text-decoration: none; 
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+
 
 .hero-cta:hover {
     transform: translateY(-3px); /* Efecto de levante */
-    background-color: var(--yellow-hover); /* Un amarillo un poco más oscuro al pasar el mouse */
+    background-color: var(--green); /* Un amarillo un poco más oscuro al pasar el mouse */
 }
 .hero-tagline { font-weight: 600; color: #666; font-size: 1.4rem; }
 /* --- FIN SECCIÓN HERO --- */
@@ -304,8 +329,8 @@ h3.card-title { text-align: center; font-size: 1.8rem; font-weight: 600; color: 
 .cta-box { 
     background: var(--yellow); 
     padding: 1.5rem 2rem;
-    border-radius: 18px; 
-    box-shadow: 0 4px 15px var(--shadow); 
+    border-radius: 1.8rem; 
+    box-shadow: 0 4rem 1.5rem var(--shadow); 
     text-decoration: none; 
     color: var(--black);
     font-weight: 700;
@@ -325,9 +350,9 @@ section {
 /* Estilo de la lista dentro de las tarjetas */
 .card {
     background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px var(--shadow);
+    padding: 3rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 10rem 30rem var(--shadow);
     border-top: 6px solid var(--dark-blue); /* LÍNEA AZUL SUPERIOR */
     display: flex;
     flex-direction: column;
@@ -364,7 +389,7 @@ section {
     font-weight: 700;
     color: var(--black);
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 0.5rem;
 }
 
 /* --- SECCIÓN NOTA LEGAL Y CONTACTO --- */
@@ -376,7 +401,7 @@ section {
 }
 
 .legal-container {
-    max-width: 900px; /* Evita que el texto sea demasiado largo en PC */
+    max-width: 90rem; /* Evita que el texto sea demasiado largo en PC */
     margin: 0 auto;
 }
 
@@ -401,7 +426,7 @@ section {
     font-size: 2.2rem;
     color: var(--dark-blue);
     margin-bottom: 0.5rem;
-    margin-top: 60px;    
+    margin-top: 6rem;    
 }
 
 /* El botón CTA se adapta al ancho en móvil */
@@ -420,13 +445,13 @@ section {
 
 .slider-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 120rem;
     width: 100%;
     height: 70vh;
-    margin: 20px auto;
+    margin: 2rem auto;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--shadow);
+    border-radius: 1.5rem;
+    box-shadow: 0 10rem 30rem var(--shadow);
     background-color: var(--light-blue); /* Fondo oscuro para resaltar las imágenes */
 }
 
@@ -440,7 +465,7 @@ section {
     flex: 0 0 50%;
     height: 100%;
     position: relative;
-    padding: 5px;
+    padding: 0.5rem;
     min-width: 50%; /* Muestra 2 fotos en PC */
     position: relative;
     box-sizing: border-box;
@@ -451,18 +476,18 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 1rem;
     display: block;
 }
 
 .ba-label {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 2rem;
+    left: 2rem;
     background: var(--dark-blue);
     color: white;
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
     font-size: 1.2 rem;
 
     font-weight: bold;
@@ -485,10 +510,10 @@ section {
 
 .modal-content {
     background: white;
-    padding: 40px;
-    border-radius: 12px;
+    padding: 4rem;
+    border-radius: 1.2rem;
     width: 90%;
-    max-width: 600px;
+    max-width: 60rem;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -503,9 +528,9 @@ section {
 
 .legal-box {
     background: #f9f9f9;
-    padding: 20px;
+    padding: 2rem;
     border-left: 5px solid var(--yellow);
-    margin-top: 20px;
+    margin-top: 2rem;
     font-size: 1.2rem;
 }
 
@@ -517,10 +542,10 @@ section {
 
 .slider-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 100rem;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 1.2rem;
 }
 
 .slider-wrapper {
@@ -532,26 +557,26 @@ section {
 .slider-slide {
     min-width: 50%; /* Muestra 2 imágenes en PC */
     position: relative;
-    padding: 5px;
+    padding: 0.5rem;
 
     height: 100%;
 }
 
 .slider-slide img {
     width: 100%;
-    height: 400px;
+    height: 40rem;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 0.8rem;
 }
 
 .ba-label {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 2rem;
+    left: 2rem;
     background: rgba(0,0,0,0.7);
     color: white;
-    padding: 5px 12px;
-    border-radius: 4px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -567,17 +592,17 @@ section {
     background: rgba(0,0,0,0.5);
     color: white;
     border: none;
-    padding: 15px;
+    padding: 1.5rem;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 2rem;
     border-radius: 50%;
 
     z-index: 10; /* Ensure they are above the slides */
     pointer-events: auto !important; /* Forces the buttons to be clickable */
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 1rem; }
+.next { right: 1rem; }
 
 /* --- MODAL WHO WE ARE --- */
 .modal-overlay {
@@ -593,9 +618,9 @@ section {
 
 .modal-window {
     background: var(--white);
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 600px;
+    padding: 4rem;
+    border-radius: 1.2rem;
+    max-width: 60rem;
     width: 90%;
     position: relative;
     max-height: 85vh;
@@ -605,7 +630,7 @@ section {
 .modal-title {
     text-align: center;
     color: var(--dark-blue);
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .modal-description {
@@ -617,8 +642,8 @@ section {
 }
 
 .modal-signature {
-    margin: 20px 0;
-    padding-top: 15px;
+    margin: 2rem 0;
+    padding-top: 1.5rem;
 }
 
 .sig-name { font-weight: bold; display: block; font-size: 1.5rem; }
@@ -626,8 +651,8 @@ section {
 
 .modal-legal-box {
     background: var(--light-blue);
-    padding: 20px;
-    border-left: 5px solid var(--yellow);
+    padding: 2rem;
+    border-left: 0.5rem solid var(--yellow);
     font-size: 1.2rem;
     color: var(--text-color);
     text-align: justify;
@@ -636,12 +661,12 @@ section {
 
 .modal-close-btn {
     display: block;
-    margin: 20px auto 0;
-    padding: 10px 25px;
+    margin: 2rem auto 0;
+    padding: 1rem 2.5rem;
     background: var(--dark-blue);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
@@ -661,9 +686,9 @@ section {
 
 .modal-window {
     background: white;
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 600px;
+    padding: 4rem;
+    border-radius: 1.2rem;
+    max-width: 60rem;
     width: 90%;
     position: relative;
     max-height: 85vh; /* Evita que se salga de la pantalla en móvil */
@@ -673,8 +698,8 @@ section {
 
 .modal-close-x {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 1.5rem;
+    right: 1.5rem;
     border: none;
     background: none;
     font-size: 2.4rem;
@@ -698,7 +723,7 @@ section {
 }
 
 .modal-signature {
-    border-bottom: 1px solid #eee;
+    border-bottom: 0.1rem solid #eee;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     margin-bottom: 2rem;
@@ -722,9 +747,9 @@ section {
 
 .modal-legal-box {
     background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid var(--yellow);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    border-left: 0.5rem solid var(--yellow);
 }
 
 .modal-legal-box p {
@@ -741,7 +766,7 @@ section {
     background: var(--dark-blue);
     color: var(--white);
     border: none;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     cursor: pointer;
     font-weight: 600;
     transition: background 0.3s;
@@ -777,60 +802,60 @@ body {
 .mobile-wrapper {
     max-width: 480px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 1.5rem;
 }
 
 .service-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .service-header h1 {
-    font-size: 24px;
+    font-size: 2.4rem;
     color: #444;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     font-weight: 400;
 }
 
 .sub-nav {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+    border-top: 0.1rem solid #ccc;
+    padding-top: 1rem;
 }
 
 .sub-nav a {
     color: #000;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .term-card {
     background: var(--card-bg);
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 15px;
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
-    gap: 15px;
+    gap: 1.5rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
 }
 
 .term-card .icon {
-    width: 32px;
-    height: 32px;
+    width: 3.2rem;
+    height: 3.2rem;
     color: #555;
     flex-shrink: 0;
 }
 
 .term-card h2 {
-    font-size: 18px;
-    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
     color: #222;
 }
 
 .term-card p {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: var(--text-sub);
     margin: 0;
     line-height: 1.4;
@@ -841,12 +866,12 @@ body {
     background-color: var(--accent-blue);
     color: white;
     text-align: center;
-    padding: 12px;
-    border-radius: 25px;
+    padding: 1.2rem;
+    border-radius: 2.5rem;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 15px;
-    font-size: 15px;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
 }
 
 
@@ -872,7 +897,7 @@ body {
         width: 100%;
     }
     section { 
-        padding: 4rem 15px !important; 
+        padding: 4rem 1.5rem !important; 
         width: 100% !important;
         box-sizing: border-box;
     }
@@ -886,7 +911,7 @@ body {
     .hero-img, .hero-content { 
         width: 100% !important;
         flex: 0 0 100%;
-        padding: 1rem 10px; 
+        padding: 1rem 1.5rem; 
         text-align: center;
     }
     .hero-img { height: 300px; }
@@ -904,7 +929,7 @@ body {
         display: block;
     }
     /* 4. Nota Legal */
-    .legal-notice { padding: 4rem 15px; }
+    .legal-notice { padding: 4rem 1.5rem; }
     .legal-ask { font-size: 1.8rem; }
 
     /* 5. Galería */
@@ -926,19 +951,15 @@ body {
 /* IMPORTANTE: Si el contenedor padre (.footer-col) tiene 'align-items: center', 
    debes decirle que para los contactos use la izquierda: */
 
-    
-
     .emoji-color {
     color: transparent;           /* Hace el emoji original invisible */
     text-shadow: 0 0 0 var(--green);     /* Crea un emoji verde en su lugar */
     }
 
-
-
 .footer-container {
 background: linear-gradient(180deg, #0a192f 0%, #050c16 100%);
 color: white;
-padding: 40px 20px;
+padding: 4rem 2rem;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 text-align: center;
 }
@@ -946,7 +967,7 @@ text-align: center;
 .footer-title {
 font-size: 1.8rem !important;
 letter-spacing: 1px;
-margin-bottom: 25px;
+margin-bottom: 2.5rem;
 }
 
 .card-group, .contact-section {
@@ -958,9 +979,9 @@ margin: 0 auto;
 .info-card, .contact-card {
 background: rgba(255, 255, 255, 0.05);
 border: 1px solid rgba(255, 255, 255, 0.1);
-border-radius: 12px;
-padding: 15px;
-margin-bottom: 10px;
+border-radius: 1.2rem;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
 display: flex;
 align-items: center;
 text-align: left;
@@ -971,67 +992,28 @@ transition: transform 0.2s;
 
 /* Efecto de brillo para el botón de llamada */
 .highlight-call {
-border: 1px solid rgba(76, 175, 80, 0.5);
-box-shadow: 0 0 15px rgba(76, 175, 80, 0.2);
+border: 0.1rem solid rgba(76, 175, 80, 0.5);
+box-shadow: 0 0 1.5rem rgba(76, 175, 80, 0.2);
 }
 
-.contact-title { font-size: 1.4rem; margin-top: 30px; margin-bottom: 5px; }
-.contact-subtitle { font-size: 0.8rem; opacity: 0.7; margin-bottom: 20px; }
+.contact-title { font-size: 1.4rem; margin-top: 3rem; margin-bottom: 0.5rem; }
+.contact-subtitle { font-size: 0.8rem; opacity: 0.7; margin-bottom: 2rem; }
 
-.text-group { display: flex; flex-direction: column; margin-left: 15px; }
+.text-group { display: flex; flex-direction: column; margin-left: 1.5rem; }
 
 .footer-bottom {
-margin-top: 40px;
+margin-top: 4rem;
 font-size: 0.75rem;
 opacity: 0.6;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-padding-top: 20px;
+border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+padding-top: 2rem;
 }
 
-.privacy-link { color: #aab8c2; text-decoration: underline; display: block; margin-bottom: 15px; }
-.license { font-weight: bold; margin-bottom: 10px; }
-
-
-
-
-
-
-
+.privacy-link { color: #aab8c2; text-decoration: underline; display: block; margin-bottom: 1.5rem; }
+.license { font-weight: bold; margin-bottom: 1rem; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* --- AJUSTES PARA MÓVILES PEQUEÑOS --- */
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 600px) {
    
@@ -1059,15 +1041,15 @@ padding-top: 20px;
 
 .testimonials-list {
     text-align: left;
-    margin: 20px 0;
+    margin: 2rem 0;
 }
 
 .testimonial-card {
     background: var(--light-blue);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 1rem;
     margin-bottom: 1.5rem;
-    border-left: 4px solid var(--dark-blue);
+    border-left: 0.4rem solid var(--dark-blue);
 }
 
 .testimonial-card p {
@@ -1089,13 +1071,13 @@ padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
     background-color: var(--white);
     color: var(--text-dark);
     text-decoration: none;
     padding: 1.2rem;
-    border: 1px solid #dadce0;
-    border-radius: 8px;
+    border: 0.1rem solid #dadce0;
+    border-radius: 0.8rem;
     font-weight: 700;
     font-size: 1.4rem;
     margin: 2rem 0;
@@ -1108,8 +1090,8 @@ padding-top: 20px;
 }
 
 .google-icon {
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 /* Ajuste para el botón de cerrar (reutilizando tu estilo .btn-close-modal) */
@@ -1120,18 +1102,18 @@ padding-top: 20px;
 .info-card {
     display: flex;       /* Alinea icono y texto en la misma línea */
     align-items: center; /* Centra verticalmente el contenido */
-    gap: 10px;           /* Crea espacio entre el icono y el texto */
+    gap: 1rem;           /* Crea espacio entre el icono y el texto */
 }
 
 .card-icon {
     /* Correct syntax: property: value(n) value(n); */
     filter: brightness(0) invert(1);
-    width: 20px; 
+    width: 2rem; /* Ajusta el tamaño de tu icono */ 
     height: auto;
     display: inline-block;
     vertical-align: middle;
-    margin-left: 10px; /* Espacio entre el icono y el texto */
-    margin-right: 20px; /* Espacio entre el icono y el texto */
+    margin-left: 1rem; /* Espacio entre el icono y el texto */
+    margin-right: 2rem; /* Espacio entre el icono y el texto */
 }
 .info-card ul {
     list-style: none; /* Quita los puntos por defecto */
@@ -1141,42 +1123,42 @@ padding-top: 20px;
 .info-card li {
     display: flex;         /* Alinea icono y texto en línea */
     align-items: center;   /* Centra verticalmente el icono con el texto */
-    margin-bottom: 10px;   /* Espacio entre cada línea */
+    margin-bottom: 1rem;   /* Espacio entre cada línea */
 }
 
 .list-icon {
-    width: 20px;           /* Ajusta el tamaño de tu icono */
+    width: 2rem;           /* Ajusta el tamaño de tu icono */
     height: auto;
-    margin-right: 12px;    /* Espacio entre el icono y el texto */
+    margin-right: 1.2rem;    /* Espacio entre el icono y el texto */
     
 }
 /* Contenedor del Modal */
 .modal-content {
     background-color: #f2f2f2 !important; /* Fondo gris claro como la imagen */
     padding: 0 !important;
-    border-radius: 20px;
+    border-radius: 2rem;
     overflow-y: auto;
     max-height: 90vh;
 }
 
 .modal-header-modern {
-    background: white;
-    padding: 20px 15px 10px;
+    background: var(--white);
+    padding: 2rem 1.5rem 1rem 1.5rem;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
 .modal-header-modern h1 {
-    font-size: 22px;
-    letter-spacing: 1px;
-    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+    margin: 0 0 1rem 0;
     color: #333;
 }
 
 .modal-nav-mini {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -1184,41 +1166,39 @@ padding-top: 20px;
 
 /* Estilo de Tarjetas */
 .cards-wrapper {
-    padding: 15px;
+    padding: 1.5rem;
 }
 
 .policy-card {
     background: white;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 12px;
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
     display: flex;
-    gap: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border: 1px solid #e0e0e0;
+    gap: 1.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.05);
+    border: 0.1rem solid #e0e0e0;
 }
 
 .policy-card i {
-    width: 28px;
+    width: 2.8rem;
     color: #444;
     flex-shrink: 0;
 }
 
 .card-info h2 {
-    font-size: 16px;
-    margin: 0 0 5px 0;
+    font-size: 1.6rem;
+    margin: 0 0 9.5rem 0;
     text-transform: uppercase;
     color: var(--dark-blue);
     text-align: justify;
     text-justify: inter-word; /* Mejora el espacio entre palabras */
     hyphens: auto;           /* Corta palabras largas con guión para evitar "ríos" */
     -webkit-hyphens: auto;  
-
-    
 }
 
 .card-info p {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #555;
     line-height: 1.4;
     margin: 0;
@@ -1230,10 +1210,388 @@ padding-top: 20px;
     background: var(--green);
     color: white !important;
     text-align: center;
-    padding: 12px;
-    border-radius: 30px;
+    padding: 1.2rem;
+    border-radius: 3rem;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 15px;
-    font-size: 14px;
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+}
+/* Esto evita que al tocar el botón con el dedo se seleccione el texto */
+.nav-item, 
+.hero-cta, 
+.hero-badge,
+.cta-box,
+.nav-cta {
+    -webkit-user-select: none; /* Safari/iOS */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Estándar */
+    
+    /* También evita el recuadro gris que sale en Android al tocar links */
+    -webkit-tap-highlight-color: turquoise  
+    
+}
+/* 1. Estilo base para movimiento suave */
+.nav-cta, .hero-cta {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    
+    /* Quita el recuadro azul/gris que sale en el móvil al tocar */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+/* 2. Efecto al pasar el mouse (PC) */
+.nav-cta:hover, .hero-cta:hover {
+    transform: scale(1.05); /* Crece un poquito */
+}
+
+/* 3. El efecto "iPhone" (Al presionar con el dedo o clic) */
+.nav-cta:active, .hero-cta:active {
+    transform: scale(0.92); /* Se "hunde" */
+    filter: brightness(0.9); /* Se oscurece ligeramente */
+}
+
+
+
+/*ventanas modales PAYMENT & SERVICE faq*/
+/* 1. RESET, CONFIGURACIÓN Y PROTECCIÓN */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    -webkit-user-select: none;
+    user-select: none; /* Evita selección de texto */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark-blue: #1e3a8a;
+    --light-blue: #ebf3f9;
+    --yellow: #ffc107;
+    --yellow-hover: #e5ac00;
+    --green: #22c55e;
+    --text-dark: #1f2937;
+    --text-gray: #4b5563;
+    --black: #000000;
+    --white: #ffffff;
+    --footer-back-ground: #1f2937;
+    --shadow: rgba(0,0,0,0.2);
+}
+
+/* Permitir selección solo en elementos necesarios */
+a, button, .nav-item, .hero-cta, .nav-cta {
+    user-select: auto;
+    -webkit-tap-highlight-color: transparent; /* Quita cuadro gris en móvil */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+    font-size: 1.6rem;
+}
+
+/* 2. TIPOGRAFÍA */
+h1 { text-align: center; font-size: clamp(3rem, 4vw, 4rem); font-weight: 600; margin-bottom: 1.6rem; color: var(--dark-blue); }
+h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: 800; margin-bottom: 4rem; }
+
+/* 3. HEADER Y NAVEGACIÓN */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand-logo {
+    display: block;
+    height: 6rem !important;
+    width: auto;
+    max-width: 16rem;
+    object-fit: contain;
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+/* 4. BOTONES CON EFECTO IPHONE (Presión y Rebote) */
+.nav-cta, .hero-cta, .cta-box {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-cta {
+    color: var(--green) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.nav-cta:hover { background-color: var(--yellow); color: var(--white) !important; }
+
+/* Efecto de presión para todos los botones principales */
+.nav-cta:active, .hero-cta:active, .cta-box:active {
+    transform: scale(0.92);
+    filter: brightness(0.9);
+}
+
+/* 5. MODALES MODERNOS */
+.modal-overlay {
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(15, 23, 42, 0.8); 
+    z-index: 3000; 
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white); 
+    padding: 4rem; 
+    width: 92%; 
+    max-width: 60rem; 
+    border-radius: 2.4rem; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
+    animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    color: var(--dark-blue); 
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.payment-box {
+    background: #f8fafc;
+    padding: 2.5rem; 
+    border-radius: 1.6rem; 
+    margin-bottom: 2rem; 
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.faq-item { border-bottom: 1px solid #f1f5f9; padding: 1.5rem 0; }
+.faq-question { color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem; }
+.faq-answer { color: var(--text-gray); font-size: 1.4rem; }
+
+.btn-close-modal {
+    background: var(--dark-blue); 
+    color: var(--white); 
+    width: 100%;
+    border: none; 
+    padding: 1.6rem; 
+    border-radius: 1.2rem; 
+    cursor: pointer; 
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+/* 6. SECCIÓN HERO */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--light-blue);
+    min-height: 50rem;
+}
+
+.hero-img { width: 50%; height: 40rem; object-fit: cover; }
+.hero-content { width: 50%; padding: 4rem; text-align: center; }
+
+.hero-cta {
+    display: inline-block;
+    background-color: var(--yellow);
+    color: var(--black);
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    box-shadow: 0 1rem 2rem var(--shadow);
+}
+
+.hero-cta:hover {
+    background-color: var(--yellow-hover);
+    transform: translateY(-2px) scale(1.02);
+}
+
+
+/* --- Ventana Modal FAQ & Payment (Moderna) --- */
+.modal-overlay {
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(15, 23, 42, 0.8); /* Azul oscuro traslúcido */
+    z-index: 3000; 
+    backdrop-filter: blur(10px); /* Efecto cristalino */
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background: #ffffff; 
+    padding: 3.5rem; 
+    width: 100%; 
+    max-width: 55rem; 
+    border-radius: 3rem; /* Bordes muy redondeados tipo iPhone */
+    position: relative; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+    animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    color: var(--dark-blue); 
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    border: none;
+}
+
+.modal-content > p {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Caja de Métodos de Pago */
+.payment-box {
+    background: #f8fafc; /* Gris azulado muy suave */
+    padding: 2.5rem; 
+    border-radius: 2rem; 
+    margin-bottom: 3rem; 
+    text-align: center; 
+    border: 1px solid #e2e8f0;
+}
+
+.payment-box h3 {
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+}
+
+.payment-icons {
+    font-size: 3rem; 
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Items de FAQ */
+.faq-item {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+.faq-question {
+    color: var(--dark-blue); 
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.faq-answer {
+    color: var(--text-gray);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding-left: 2.8rem; /* Alinea el texto con el icono */
+}
+
+/* Pie de página del modal */
+.modal-footer-note {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.3rem;
+    margin: 2.5rem 0 1rem;
+    font-style: italic;
+}
+
+/* Botón de cerrar "Premium" */
+.btn-close-modal {
+    background: var(--dark-blue); 
+    color: white; 
+    width: 100%;
+    border: none; 
+    padding: 1.8rem; 
+    border-radius: 1.8rem; 
+    cursor: pointer; 
+    font-weight: 700; 
+    font-size: 1.7rem;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
+}
+
+.btn-close-modal:active {
+    transform: scale(0.94); /* Efecto iPhone */
+}
+
+/* X de cerrar en la esquina */
+.modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--dark-blue);
+    transform: rotate(90deg);
+}
+
+/* Scrollbar personalizada para el modal */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
 }
