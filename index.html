@@ -52,16 +52,13 @@
     <!--Existen smartphones Android ultra-pequeños con pantallas de apenas 2.5 , 3.0 , 5.5 6.9 y 8.0 pulgadas.-->
 
 <header class="main-header">
-  
-
     <nav class="header-nav">
         <a href="#services" class="nav-item">Services</a>
         <a href="#gallery" class="nav-item">Gallery</a>
         <!-- Unified Link -->
         <a href="#paymentFaqModal" onclick="openModal('paymentFaqModal'); return false;" class="nav-item">FAQ</a>
-        <a href="#whoWeAreModal" onclick="openModal('whoWeAreModal'); return false;" class="nav-item">Who We Are</a>
+        <a href="#whoWeAreModal" onclick="openModal('whoWeAreModal'); return false;" class="nav-item ">Who We Are</a>
     </nav>
-
 </header>
 
 <section class="hero">
@@ -210,10 +207,8 @@
 
 <footer class="footer-container">
     <div class="footer-content">
-  
         <!-- Título Principal -->
         <h2 class="footer-title">HANDY RAFY SERVICES LLC</h2>
-  
         <!-- Sección de Servicios -->
         <div class="card-group">
             <div class="info-card">
@@ -246,26 +241,27 @@
                 <h3 class="contact-title">Contact Us</h3>
                 <p class="contact-subtitle">GET IN TOUCH</p>
 
-                <div class="contact-card">
-                    <span class="icon-pin">📍</span>
+                <div class="contact-card highlight-call">
+                    <a href="https://google.com/maps/@33.952723,-84.5496896,12z?entry=ttu"
+                        target="_blank" 
+                        class="card-item footer-GoogleMap" role="button" draggable="false">
+                        <span class="icon-mail">📍</span>
+                        <span>Serving Marietta, GA & Surrounding Areas</span> 
+                    </a>
+                </div>
+                    
+                <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="contact-card highlight-call" role="button" draggable="false">
+                    <span class="icon-phone">📞</span>
+                    <div class="text-group"><span>TAP TO TEXT:</span>(678) 698-7649</div>
+                </a>
+
+                <a href="mailto:HandyRafyMarietta@gmail.com" class="contact-card highlight-call" role="button" draggable="false">
+                    <span class="icon-mail">✉️</span>
                     <div class="text-group">
-                        <strong>Marietta, GA and</strong>
-                        <span>surrounding areas</span>
+                    <span>EMAIL US:</span>
+                        HandyRafyMarietta@gmail.com
                     </div>
-            </div>
-
-            <a href="sms:+16786987649?body=Hi%21%20I%20am%20interested%20in%20your%20handyman%20services." class="contact-card highlight-call">
-                <span class="icon-phone">📞</span>
-                <div class="text-group"><span>TAP TO TEXT:</span>(678) 698-7649</div>
-            </a>
-
-            <a href="mailto:HandyRafyMarietta@gmail.com" class="contact-card">
-            <span class="icon-mail">✉️</span>
-            <div class="text-group">
-            <span>EMAIL US:</span>
-                HandyRafyMarietta@gmail.com
-            </div>
-            </a>
+                </a>
             </div>
 
             <!-- Pie de página inferior -->
@@ -275,7 +271,6 @@
                 <p class="copyright">© 2026 Handy Rafy LLC. Owned and operated by Rafael J. Sanchez.</p>
                 <p class="version">VERSION: 1.0</p>
             </div>
-
     </div>
 </footer>
 
@@ -290,7 +285,6 @@
 <!-- Modales -->
 <div id="testimonialModal" class="modal-container">
     <div class="modal-window">
- 
         <header class="modal-header-modern">
             <div class="modal-nav-mini">
                 <span class="policy-text">Customer Testimonials</span>
@@ -300,8 +294,8 @@
 
         <h3>What Our Neighbors Say: </h3>
         <a href="TU_LINK_DE_GOOGLE_AQUI" target="_blank" class="google-btn">
-            <img src="https://upload.wikimedia.org" alt="Google">
-            <h3>View all reviews on Google</h3>
+            <img src="https://upload.wikimedia.org" alt="Google Reviews"">
+            <h4>View all reviews on Google</h4>
         </a>
  
         <div class="cards-wrapper">
@@ -323,10 +317,10 @@
                     <span class="titulos">- Rosa M Gambetta., Marietta</span>
                 </div>
             </section>
-            <footer class="footer-container">
-                <button class="btn-modal btn-green" onclick="closeModal('testimonialModal')">Close Window</button>
-            </footer>
         </div>
+            <footer>
+                <button class="btn-modal btn-color" onclick="closeModal('testimonialModal')">Close</button>
+            </footer>
     </div>
 </div>
 
@@ -401,7 +395,7 @@
             </div>
         </div>
         <footer"
-            <button onclick="closeModal('paymentFaqModal')" class="btn-modal btn-green">Close</button>
+            <button onclick="closeModal('paymentFaqModal')" class="btn-modal btn-color">Close</button>
         </footer>
     </div>
     </div>
@@ -472,7 +466,7 @@
  
  
             <footer>    
-                <button onclick="closeModal('privacyModal')" class="btn-modal btn-green">Close</button>
+                <button onclick="closeModal('privacyModal')" class="btn-modal btn-color">Close</button>
             </footer>
         </div>
     </div>
@@ -514,7 +508,7 @@
             <!-- Botón al final del scroll de tarjetas -->
         </div> 
         <footer >
-            <button onclick="closeModal('whoWeAreModal')" class="btn-modal btn-green">Close</button>
+            <button onclick="closeModal('whoWeAreModal')" class="btn-modal btn-color">Close</button>
         </footer>
     </div> <!-- Cierra modal-window -->
 </div> <!-- Cierra modal-container -->
