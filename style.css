@@ -34,8 +34,9 @@ Rojo Pastel (Muy suave): #fca5a5.
     --clr-black: #000000;
     --clr-green: #28a745; /*check mark greenverde*/
     --clr-white: #ffffff; /*menu en el hero*/
-    --clr-shadow: rgba(0, 0, 0, 0.2); /* Sombra suave para tarjetas y botones */
- 
+    --clr-shadow: rgba(31, 41, 55, 0.08) 0px 20px 25px -5px; /*rgba(0, 0, 0, 0.1);/*  Sombra suave para tarjetas y botones */
+    /*--clr-shadow: rgba(31, 41, 55, 0.08) 0px 20px 25px -5px */ /* Sombra más sutil y moderna */
+   
     /* Colores de Texto */
     --text-content: #212529; /*probado*/
     --text-title-h1: #1e3a8a;/*#4b5563;*/
@@ -133,7 +134,7 @@ h3 {
     margin-top: 1.5rem;
     font-size: 1.4rem;
     /* THE SHADOW: x-offset, y-offset, blur, color */
-    box-shadow: 0 4px 6px var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
  
     /* Smooth transition for when the user hovers */
     transition: all 0.3s ease;
@@ -243,7 +244,7 @@ section {
     background: var(--bg-card);
     padding: 2rem 1rem 2rem 1rem;
     border-radius: 1.2rem;
-    box-shadow: 0 1rem 3rem var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
@@ -312,7 +313,7 @@ section {
     -webkit-hyphens: auto;  
    
     /* Decoración */
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: none !important;
 }
 
 /* Clases modificadoras de color cambia el color del borde superior para no repetir card */
@@ -430,7 +431,7 @@ touch-action: manipulation; /* Evita el "ghost click" en móviles al tocar las f
     margin: 2rem auto;
     overflow: hidden;
     border-radius: 1.5rem;
-    box-shadow: 0 1.5rem 4rem var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
     background-color: var(--light-background); /* Fondo oscuro para resaltar las imágenes */
 }
 
@@ -487,7 +488,7 @@ touch-action: manipulation; /* Evita el "ghost click" en móviles al tocar las f
     .prev:hover, .next:hover {
         background: var(--text-title-h1);
         transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 4px 6px var(--clr-shadow);
+        box-shadow: var(--clr-shadow);
      }
 }
 
@@ -629,7 +630,7 @@ modal-PaymentFaq {
     border: none;
     width: 100%;
     max-width: 300px;
-    box-shadow: 0 4px 6px var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
     justify-content: center;
     align-items: center;
     margin: 3rem auto 1rem auto;
@@ -641,7 +642,7 @@ modal-PaymentFaq {
 .btn-modal:hover {
     background-color: #4A657D; /* Una versión más profunda del #5B7C99 */
     transform: translateY(-2px); /* Pequeño salto hacia arriba */
-    box-shadow: 0 6px 12px var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
     color: var(--clr-white);
 }
 
@@ -725,7 +726,7 @@ modal-PaymentFaq {
     margin-top: 1.5rem;
     font-size: var(--fs-h4);
 /* THE SHADOW: x-offset, y-offset, blur, color */
-    box-shadow: 0 4px 6px var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
   
   /* Smooth transition for when the user hovers */
   transition: all 0.3s ease;
@@ -1013,7 +1014,7 @@ h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: var(--f
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--clr-white);
-    box-shadow: 0 0.2rem 0.5rem var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -1096,7 +1097,7 @@ h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: var(--f
 .btn-yellow:hover {
     background-color: var(--sms-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--clr-shadow);
+    box-shadow: var(--clr-shadow);
 }
 
 /* Variante Verde (Si la necesitas) */
