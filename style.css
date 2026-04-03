@@ -16,40 +16,35 @@ Rojo Pastel (Muy suave): #fca5a5.
 
 :root {
     /* Tipografía - Escala */
-    --fs-h1: 4.5rem;    
+    --fs-h1: 4.2rem;    
     --fs-h2: 3.2rem;    
-    --fs-h3: 2.4rem;    
+    --fs-h3: 2.2rem;    
     --fs-h4: 1.8rem;    
     --fs-body: 1.6rem;  
     --fs-small: 1.2rem; 
 
     /* Tipografía - Pesos */
-    --fw-light: 300;   
     --fw-regular: 400; 
-    --fw-medium: 500;  
     --fw-semibold: 600;
     --fw-bold: 700;    
     --fw-black: 900;   
 
    /* Colores Base */
-    --clr-bg-light: #ebf3f9;
     --clr-blue: #007AFF;
     --clr-black: #000000;
+    --clr-green: #28a745; /*check mark greenverde*/
     --clr-white: #ffffff; /*menu en el hero*/
-    --clr-shadow: rgba(0, 0, 0, 0.2);   ; /* Sombra suave para tarjetas y botones */
-    --clr-test-red: red; 
-    --clr-green: #22c55e;
-
+    --clr-shadow: rgba(0, 0, 0, 0.2); /* Sombra suave para tarjetas y botones */
+ 
     /* Colores de Texto */
     --text-content: #212529; /*probado*/
     --text-title-h1: #1e3a8a;/*#4b5563;*/
     --text-title-h2: #1e3a8a;/*#4b5563;*/
     --text-title-h3: #1e3a8a;/*#4b5563;*/
+    --text-title-h4: #1e3a8a;/*#4b5563;*/
     --text-footer: #f8fafc; /*Gris Nube: el texto del footer */
     --text-gray:#e2e8f0; /* Gris Plata: para textos secundarios */
     
-
-
  /* Componentes: Botones */
     --btn-sms-bg: #ffc107;
     --btn-sms-hover: #e5ac00;
@@ -58,32 +53,26 @@ Rojo Pastel (Muy suave): #fca5a5.
 
  /* Componentes: Secciones y Cards */
     --bg-hero: #CBD5E1; 
-    --bg-footer: #1f2937; /* Corregido footer-back-ground */
+    --bg-footer: #1f2937; /* Corregido footer-back-ground linear-gradient(180deg, #0a192f 0%, #050c16 100%) */
     
-    --bg-modal: #94A3B8;  /* Unificada la variable modal */
+    --bg-modal:  #94A3B8; /*  Unificada la variable modal */
     --bg-modal-wrapper: #ffff; /* Nueva variable para el fondo de la modal */
     --bg-card: #ffff;   /* Corregido backgound-cards */
    
     --bg-modal-heder: #5B7C99; /* Nueva variable para el header de la modal */
-    
 
-
-
-        /* Bordes de Cards */
+    /* Bordes de Cards */
     --border-card-services: #bfdbfe;   /* Very light Sky Blue */
     --border-card-payments: #93c5fd;   /* Soft Azure */
     --border-card-whoweare: #5B7C99;   /* Keep your current muted blue (it works!) */
     --border-card-privacy: #cbd5e1;    /* Soft Slate */
-
-    
-/*    
-    --border-card-services: darkblue; 
-    --border-card-payments: #FF8559;
-    --border-card-whoweare:#5B7C99; 
-    --border-card-privacy: #FFCE1B; 
-*/
+    /*    
+        --border-card-services: darkblue; 
+        --border-card-payments: #FF8559;
+        --border-card-whoweare:#5B7C99; 
+        --border-card-privacy: #FFCE1B; 
+    */
     }
-
 
 body {
     /* Tus estilos actuales */
@@ -100,12 +89,14 @@ body {
     -moz-osx-font-smoothing: grayscale;   /* Lo mismo para Firefox en Mac */
 }
 
-
 /* Resaltado del nombre del servicio */
 .highlight {
+    display: inline-block;/* Esto ayuda a que el navegador lo 'vea' como un bloque para agrandarlo no funciona*/
     font-weight: var(--fw-bold);
+
+    font-size: var(--fs-h4);  /* Esto ayuda a que el navegador lo 'vea' como un bloque para agrandarlo no funciona */
+
     color: var(--clr-black);
-    display: inline-block;
     margin-right: 0.5rem;
 }
 
@@ -141,9 +132,9 @@ h3 {
     font-weight: bold;
     margin-top: 1.5rem;
     font-size: 1.4rem;
-    box-shadow: var(--clr-shadow);
     /* THE SHADOW: x-offset, y-offset, blur, color */
-    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px var(--clr-shadow);
+ 
     /* Smooth transition for when the user hovers */
     transition: all 0.3s ease;
 }
@@ -169,48 +160,6 @@ h3 {
     align-items: center;
     gap: 0rem;
 }
-
-.brand-logo {
-    display: block;
-    height: 6rem !important;    /* ANTES TENÍAS 0.1px, por eso no se veía */
-    width: auto;
-    max-width: 16rem;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.brand-text {
-    font-weight: var(--fw-black);
-    font-size: var(--fs-h2);         /* Aumenté el tamaño de la letra */
-    color: var(--text-title-h3); /* Un azul oscuro profesional */
-    line-height: 1;
-}
-
-.brand-suffix {
-    font-size: var(--fs-small);
-    color: #888;
-    vertical-align: middle;
-}
-
-
-.nav-item:hover {
-    color: var(--text-title-h3);
-}
-
-.payment-box {
-    background: var(--light-blue);
-    padding: 2rem; 
-    border-radius: 1rem; 
-    margin-bottom: 2.5rem; 
-    text-align: center; 
-    border: 0.1rem solid #eee;
-}
-
-.payment-icons {
-    font-size: 2rem; 
-    margin: 1.5rem 0;
-}
-
 
 /* --- Begin SECCIÓN HERO --- */
 /* 2. Hero (Banner Principal) */
@@ -251,16 +200,16 @@ h3 {
 .hero-badge {
     font-weight: 600;
     color: var(--text-content);
-    font-size: var(--fs-h5);
+    font-size: var(--fs-h4);
     margin-bottom: 1.5rem;
 }
 
 
 .hero-title {
-    font-size: clamp(3rem, 5vw, 4.5rem); /* Tamaño fluido según la pantalla de poner el tamano de la letraavanzada?*/
+    font-size: var(--fs-h1); /* Tamaño fluido según la pantalla de poner el tamano de la letraavanzada?*/
     color: var(--text-title-h3);
     line-height: 1.2;
-    text-align: left; /* Alineado a la izquierda para un look moderno */
+    text-align: center; /* Alineado a la izquierda para un look moderno */
     margin-bottom: 2rem;
 }
 
@@ -272,7 +221,7 @@ h3 {
 .hero-list li {
     font-size: var(--fs-h3);
     font-weight: var(--fw-semibold);
-    color: var(--text-dark);
+    color: var(--text-content);
 }
 
 
@@ -281,13 +230,6 @@ h3 {
 
 .legal-suffix { font-size: var(--fs-small); color: #888; }
 
-.nav-menu a {
-    text-decoration: none;
-    color: var(--text-gray);
-    font-weight: 600;
-    margin-left: 1.2rem;
-    font-size: 1.2rem;
-}
 
 /* Begin GRID Y CARDS */
 section { 
@@ -311,7 +253,7 @@ section {
 
 .card-info h3 {
    font-size: var(--fs-h3);
-    color: var(--text-color-h3);
+    color: var(--text-title-h3);
     line-height: 1.5;
     position: relative;
     
@@ -332,18 +274,17 @@ section {
 
 .card-info H4 {
    font-size: var(--fs-h4);
-    color: var(--text-title-h3);
+    color: var(--text-title-h4);
     line-height: 1.5;
     position: relative;
     
     /* Espaciado */
-    padding-left: 25px; 
+    padding-left: 2.5rem; 
     padding-bottom: 0.5rem; /* Añade aire sobre la línea gris */
     margin-bottom: 1.5rem;
     
     /* Texto */
     text-align: left;
-    text-justify: inter-word;
     hyphens: auto;           
     -webkit-hyphens: auto;  
     
@@ -525,6 +466,13 @@ touch-action: manipulation; /* Evita el "ghost click" en móviles al tocar las f
     z-index: 100;
     transition: all 0.2s ease-in-out;
     pointer-events: auto !important;
+/* LA SOLUCIÓN: Desactiva gestos de zoom pero permite scroll normal */
+    touch-action: manipulation;
+    
+    /* OPCIONAL: Evita que el usuario pueda seleccionar o arrastrar la imagen */
+    user-select: none;
+    -webkit-user-drag: none;
+
 }
 
 
@@ -539,8 +487,8 @@ touch-action: manipulation; /* Evita el "ghost click" en móviles al tocar las f
     .prev:hover, .next:hover {
         background: var(--text-title-h1);
         transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
-    }
+        box-shadow: 0 4px 6px var(--clr-shadow);
+     }
 }
 
 /* --- 2. CONFIGURACIÓN PARA TOUCH (iPhone/Android) --- */
@@ -777,7 +725,7 @@ modal-PaymentFaq {
     margin-top: 1.5rem;
     font-size: var(--fs-h4);
 /* THE SHADOW: x-offset, y-offset, blur, color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px var(--clr-shadow);
   
   /* Smooth transition for when the user hovers */
   transition: all 0.3s ease;
@@ -807,7 +755,7 @@ section {
     }
 
 .footer-container {
-    background: linear-gradient(180deg, #0a192f 0%, #050c16 100%);
+    background: var(--bg-footer); /* Fondo oscuro degradado */
     color: white;
     height: auto; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -859,11 +807,11 @@ section {
     
     /* EL BRILLO: Borde y Sombra inicial */
     border: 1px solid rgba(76, 175, 80, 0.8); 
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 0 160px rgba(76, 175, 80, 0.4);
     
     /* ACTIVAR LA ANIMACIÓN DE PULSO */
     animation: pulse-glow 4s infinite;
-    transition: all 0.9s ease;
+    transition: all 0.6s ease;
 }
 
 /* 2. La animación que hace que "brille" (entre y salga) */
@@ -916,7 +864,7 @@ section {
     opacity: 0.6;
     border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
-    color: var(--text-gray) !important;
+    color: var(--text-footer) !important;
 }
 
 /* Styling for the general text (p) */
@@ -924,6 +872,20 @@ section {
     color: var(--clr-white); /* Solid white for info */
     opacity: 0.9;            /* Slightly softer so it's not piercing */
     margin-bottom: 1rem;
+}
+.footer-GoogleMap {
+    display: flex !important;       /* Alinea el icono y el texto en paralelo */
+    align-items: flex-start;        /* Mantiene el icono arriba si el texto es largo */
+    gap: 30px;                      /* Espacio entre el icono y el texto */
+    
+    color: var(--text-footer) !important;
+    text-decoration: none !important;
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-h4);
+}
+
+.footer-GoogleMap:visited {
+    color: var(--text-footer) !important;
 }
 
 /* Styling for the link (a) */
@@ -1020,18 +982,6 @@ section {
 }
 
 /* 1. Estilo base para movimiento suave */
-
-/* 2. Efecto al pasar el mouse (PC) */
-.nav-cta:hover{
-    transform: scale(1.05); /* Crece un poquito */
-}
-
-/* 3. El efecto "iPhone" (Al presionar con el dedo o clic) */
-.nav-cta:active{
-    transform: scale(0.92); /* Se "hunde" */
-    filter: brightness(0.9); /* Se oscurece ligeramente */
-
-}
 
 /* 1. RESET, CONFIGURACIÓN Y PROTECCIÓN */
 html {
@@ -1150,7 +1100,7 @@ h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: var(--f
 }
 
 /* Variante Verde (Si la necesitas) */
-.btn-green {
+.btn-color {
     background-color: var(--btn-close-bg);
     color: var(--text-content);
 }
@@ -1189,4 +1139,23 @@ h2 { text-align: center; font-size: clamp(3rem, 4vw, 3rem); font-weight: var(--f
 .faq-container {
     text-align: left;
     margin-top: 2rem;
+}
+.card-title {
+    font-size: var(--fs-h3);
+    color: var(--text-title-h3);
+    margin-bottom: 3rem;
+
+}
+
+.card-title li{
+    font-size: var(--fs-h1);
+    color: var(--text-title-h3);
+    margin-bottom: 3rem;
+
+}
+.card-title span {
+    font-size: var(--fs-h1);
+    color: var(--text-title-h3);
+    margin-bottom: 3rem;
+
 }
